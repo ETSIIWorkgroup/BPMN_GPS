@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" id="Definitions_1rza2r9" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="8.8.0">
+  <bpmn:collaboration id="Collaboration_18v8rbn">
+    <bpmn:participant id="Participant_1rzg4jg" name="TRIAJE" processRef="Process_16sgmr1" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_16sgmr1" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_15hn8r0" name="TRIAJE" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_18v8rbn">
+      <bpmndi:BPMNShape id="Participant_1rzg4jg_di" bpmnElement="Participant_1rzg4jg" isHorizontal="true">
+        <dc:Bounds x="152" y="82" width="1328" height="458" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_15hn8r0">
+        <dc:Bounds x="202" y="282" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="201" y="325" width="38" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
