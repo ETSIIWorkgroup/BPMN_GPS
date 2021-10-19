@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0exm39n" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="8.7.2">
   <bpmn:collaboration id="Collaboration_1oysc6g">
-    <bpmn:participant id="Participant_0g6fuah" name="Puesta en aqluiler de vivienda" processRef="Process_0c50wcq" />
+    <bpmn:participant id="Participant_0g6fuah" name="Puesta en alquiler de vivienda" processRef="Process_0c50wcq" />
     <bpmn:participant id="Participant_0cw7kz1" name="Arrendador" processRef="Process_0q2vpbz" />
     <bpmn:messageFlow id="Flow_11idvep" name="Presentar propuesta" sourceRef="Activity_07pbdum" targetRef="Activity_0ivein3" />
     <bpmn:messageFlow id="Flow_104h187" name="Recibir contra-oferta" sourceRef="Activity_0ivein3" targetRef="Activity_07pbdum" />
