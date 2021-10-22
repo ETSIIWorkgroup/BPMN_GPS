@@ -1,0 +1,46 @@
+Ejercicio 1:
+
+	35 arcos (el sumatorio de todas las ocurrencias)
+	5 variantes 
+	6 actividades (A, B, C, D, E, F)
+
+
+Ejercicio 4:
+
+	- Número total de casos.
+		1104
+	- Número total de variantes.
+		90
+	- Número de nodos que participan en la primera variante.
+		6
+	- Número total de nodos del proceso.
+		8
+	- Porcentaje de casos cubiertos con las primeras 3 variantes.
+		36%
+	- Nodo con mayor “Case Frequency” para la variante 1.
+		Todas
+	- Nodo con mayor “Case Frequency” para todo el registro de eventos
+		Register & Analyze Defect
+	- El número de casos que incluyen la actividad “Repair (Complex)” y el porcentaje
+	de ocurrencia.
+		60% casos, 659 en total
+	- El número de casos que no incluyen la actividad “Archive Repair”.
+		9% casos, 104 en total
+	- Obtenga el modelo de procesos de todos los casos que no incluyan el nodo
+	“Restart Repair” e indique el porcentaje de casos que se incluyen.
+		1104 - 293 = 811 casos (31% casos)
+	- Usando el diagrama de tarta, indique los recursos que aparece en más casos, en
+	número de casos en los que aparece.
+		System & Others
+	- Usando el diagrama de barras y de tarta, indique los recursos que participan en
+	la actividad “Test Repair”. 
+		Tester 1, 2 y 3
+		
+
+Ejercicio 5:
+
+	Tras Test Repair pueden ocurrir hasta tres actividades (Restart Repair, Archive Repair e Inform User) que NO aparece contemplado en el modelo descubierto. 
+	
+	Analyze Defect puede volver así mismo igual que Test Repair que no vuelve a si mismo sino a través de actividades que NO aparecen.
+	
+	No hay camino hasta Inform User sin pasar por Test Repair antes. Y tampoco existe camino desde Inform User a sí mismo.
