@@ -1,0 +1,840 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="discovered-model" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd" xmlns:celonis="http://www.celonis.com/schema/bpmn/celonis">
+<bpmn2:process id="Process_1" isExecutable="false">
+<bpmn2:startEvent id="StartEvent_-1">
+<bpmn2:outgoing>SequenceFlow_-1_0</bpmn2:outgoing>
+</bpmn2:startEvent>
+<bpmn2:endEvent id="EndEvent_-2">
+<bpmn2:incoming>SequenceFlow_34_-2</bpmn2:incoming>
+</bpmn2:endEvent>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_0">
+<bpmn2:outgoing>SequenceFlow_0_1</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_-1_0</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_2_0</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_34">
+<bpmn2:outgoing>SequenceFlow_34_2</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_34_-2</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_35_34</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_1">
+<bpmn2:outgoing>SequenceFlow_1_3</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_0_1</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_35_1</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_35">
+<bpmn2:outgoing>SequenceFlow_35_1</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_35_34</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_37_35</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_3">
+<bpmn2:outgoing>SequenceFlow_3_5</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_3_6</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_1_3</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_37">
+<bpmn2:outgoing>SequenceFlow_37_35</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_39_37</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_6_37</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_5">
+<bpmn2:outgoing>SequenceFlow_5_7</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_3_5</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_8_5</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_9_5</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_10_5</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_39">
+<bpmn2:outgoing>SequenceFlow_39_8</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_39_9</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_39_10</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_39_37</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_41_39</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_7">
+<bpmn2:outgoing>SequenceFlow_7_11</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_5_7</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_41_7</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_41">
+<bpmn2:outgoing>SequenceFlow_41_7</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_41_39</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_45_41</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_11">
+<bpmn2:outgoing>SequenceFlow_11_16</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_11_14</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_11_15</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_7_11</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_45">
+<bpmn2:outgoing>SequenceFlow_45_41</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_51_45</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_14_45</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_15_45</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_16">
+<bpmn2:outgoing>SequenceFlow_16_50</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_16_19</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_11_16</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_50">
+<bpmn2:outgoing>SequenceFlow_50_17</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_16_50</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_19_50</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:task id="Task_19" name="ER Registration">
+<bpmn2:outgoing>SequenceFlow_19_50</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_16_19</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_17">
+<bpmn2:outgoing>SequenceFlow_17_23</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_17_21</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_17_22</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_50_17</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_51">
+<bpmn2:outgoing>SequenceFlow_51_45</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_58_51</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_21_51</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_22_51</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_23">
+<bpmn2:outgoing>SequenceFlow_23_57</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_23_26</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_17_23</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_57">
+<bpmn2:outgoing>SequenceFlow_57_24</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_23_57</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_60_57</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_26">
+<bpmn2:outgoing>SequenceFlow_26_32</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_23_26</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_60_26</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_60">
+<bpmn2:outgoing>SequenceFlow_60_26</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_60_57</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_32_60</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:task id="Task_32" name="Admission IC">
+<bpmn2:outgoing>SequenceFlow_32_60</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_26_32</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_24">
+<bpmn2:outgoing>SequenceFlow_24_27</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_24_28</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_24_29</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_24_30</bpmn2:outgoing>
+<bpmn2:outgoing>SequenceFlow_24_31</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_57_24</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:exclusiveGateway id="ExclusiveGateway_58">
+<bpmn2:outgoing>SequenceFlow_58_51</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_27_58</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_28_58</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_29_58</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_30_58</bpmn2:incoming>
+<bpmn2:incoming>SequenceFlow_31_58</bpmn2:incoming>
+</bpmn2:exclusiveGateway>
+<bpmn2:task id="Task_27" name="LacticAcid">
+<bpmn2:outgoing>SequenceFlow_27_58</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_24_27</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_28" name="CRP">
+<bpmn2:outgoing>SequenceFlow_28_58</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_24_28</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_29" name="Leucocytes">
+<bpmn2:outgoing>SequenceFlow_29_58</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_24_29</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_30" name="ER Sepsis Triage">
+<bpmn2:outgoing>SequenceFlow_30_58</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_24_30</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_31" name="Admission NC">
+<bpmn2:outgoing>SequenceFlow_31_58</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_24_31</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_21" name="ER Triage">
+<bpmn2:outgoing>SequenceFlow_21_51</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_17_21</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_22" name="IV Liquid">
+<bpmn2:outgoing>SequenceFlow_22_51</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_17_22</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_14" name="Release A">
+<bpmn2:outgoing>SequenceFlow_14_45</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_11_14</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_15" name="Return ER">
+<bpmn2:outgoing>SequenceFlow_15_45</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_11_15</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_8" name="Release D">
+<bpmn2:outgoing>SequenceFlow_8_5</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_39_8</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_9" name="Release E">
+<bpmn2:outgoing>SequenceFlow_9_5</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_39_9</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_10" name="Release C">
+<bpmn2:outgoing>SequenceFlow_10_5</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_39_10</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_6" name="Release B">
+<bpmn2:outgoing>SequenceFlow_6_37</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_3_6</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:task id="Task_2" name="IV Antibiotics">
+<bpmn2:outgoing>SequenceFlow_2_0</bpmn2:outgoing>
+<bpmn2:incoming>SequenceFlow_34_2</bpmn2:incoming>
+</bpmn2:task>
+<bpmn2:sequenceFlow id="SequenceFlow_-1_0" sourceRef="StartEvent_-1" targetRef="ExclusiveGateway_0"/>
+<bpmn2:sequenceFlow id="SequenceFlow_0_1" sourceRef="ExclusiveGateway_0" targetRef="ExclusiveGateway_1"/>
+<bpmn2:sequenceFlow id="SequenceFlow_1_3" sourceRef="ExclusiveGateway_1" targetRef="ExclusiveGateway_3"/>
+<bpmn2:sequenceFlow id="SequenceFlow_3_5" sourceRef="ExclusiveGateway_3" targetRef="ExclusiveGateway_5"/>
+<bpmn2:sequenceFlow id="SequenceFlow_5_7" sourceRef="ExclusiveGateway_5" targetRef="ExclusiveGateway_7"/>
+<bpmn2:sequenceFlow id="SequenceFlow_7_11" sourceRef="ExclusiveGateway_7" targetRef="ExclusiveGateway_11"/>
+<bpmn2:sequenceFlow id="SequenceFlow_11_16" sourceRef="ExclusiveGateway_11" targetRef="ExclusiveGateway_16"/>
+<bpmn2:sequenceFlow id="SequenceFlow_16_50" sourceRef="ExclusiveGateway_16" targetRef="ExclusiveGateway_50"/>
+<bpmn2:sequenceFlow id="SequenceFlow_16_19" sourceRef="ExclusiveGateway_16" targetRef="Task_19"/>
+<bpmn2:sequenceFlow id="SequenceFlow_19_50" sourceRef="Task_19" targetRef="ExclusiveGateway_50"/>
+<bpmn2:sequenceFlow id="SequenceFlow_50_17" sourceRef="ExclusiveGateway_50" targetRef="ExclusiveGateway_17"/>
+<bpmn2:sequenceFlow id="SequenceFlow_17_23" sourceRef="ExclusiveGateway_17" targetRef="ExclusiveGateway_23"/>
+<bpmn2:sequenceFlow id="SequenceFlow_23_57" sourceRef="ExclusiveGateway_23" targetRef="ExclusiveGateway_57"/>
+<bpmn2:sequenceFlow id="SequenceFlow_23_26" sourceRef="ExclusiveGateway_23" targetRef="ExclusiveGateway_26"/>
+<bpmn2:sequenceFlow id="SequenceFlow_26_32" sourceRef="ExclusiveGateway_26" targetRef="Task_32"/>
+<bpmn2:sequenceFlow id="SequenceFlow_32_60" sourceRef="Task_32" targetRef="ExclusiveGateway_60"/>
+<bpmn2:sequenceFlow id="SequenceFlow_60_26" sourceRef="ExclusiveGateway_60" targetRef="ExclusiveGateway_26"/>
+<bpmn2:sequenceFlow id="SequenceFlow_60_57" sourceRef="ExclusiveGateway_60" targetRef="ExclusiveGateway_57"/>
+<bpmn2:sequenceFlow id="SequenceFlow_57_24" sourceRef="ExclusiveGateway_57" targetRef="ExclusiveGateway_24"/>
+<bpmn2:sequenceFlow id="SequenceFlow_24_27" sourceRef="ExclusiveGateway_24" targetRef="Task_27"/>
+<bpmn2:sequenceFlow id="SequenceFlow_27_58" sourceRef="Task_27" targetRef="ExclusiveGateway_58"/>
+<bpmn2:sequenceFlow id="SequenceFlow_24_28" sourceRef="ExclusiveGateway_24" targetRef="Task_28"/>
+<bpmn2:sequenceFlow id="SequenceFlow_28_58" sourceRef="Task_28" targetRef="ExclusiveGateway_58"/>
+<bpmn2:sequenceFlow id="SequenceFlow_24_29" sourceRef="ExclusiveGateway_24" targetRef="Task_29"/>
+<bpmn2:sequenceFlow id="SequenceFlow_29_58" sourceRef="Task_29" targetRef="ExclusiveGateway_58"/>
+<bpmn2:sequenceFlow id="SequenceFlow_24_30" sourceRef="ExclusiveGateway_24" targetRef="Task_30"/>
+<bpmn2:sequenceFlow id="SequenceFlow_30_58" sourceRef="Task_30" targetRef="ExclusiveGateway_58"/>
+<bpmn2:sequenceFlow id="SequenceFlow_24_31" sourceRef="ExclusiveGateway_24" targetRef="Task_31"/>
+<bpmn2:sequenceFlow id="SequenceFlow_31_58" sourceRef="Task_31" targetRef="ExclusiveGateway_58"/>
+<bpmn2:sequenceFlow id="SequenceFlow_58_51" sourceRef="ExclusiveGateway_58" targetRef="ExclusiveGateway_51"/>
+<bpmn2:sequenceFlow id="SequenceFlow_17_21" sourceRef="ExclusiveGateway_17" targetRef="Task_21"/>
+<bpmn2:sequenceFlow id="SequenceFlow_21_51" sourceRef="Task_21" targetRef="ExclusiveGateway_51"/>
+<bpmn2:sequenceFlow id="SequenceFlow_17_22" sourceRef="ExclusiveGateway_17" targetRef="Task_22"/>
+<bpmn2:sequenceFlow id="SequenceFlow_22_51" sourceRef="Task_22" targetRef="ExclusiveGateway_51"/>
+<bpmn2:sequenceFlow id="SequenceFlow_51_45" sourceRef="ExclusiveGateway_51" targetRef="ExclusiveGateway_45"/>
+<bpmn2:sequenceFlow id="SequenceFlow_11_14" sourceRef="ExclusiveGateway_11" targetRef="Task_14"/>
+<bpmn2:sequenceFlow id="SequenceFlow_14_45" sourceRef="Task_14" targetRef="ExclusiveGateway_45"/>
+<bpmn2:sequenceFlow id="SequenceFlow_11_15" sourceRef="ExclusiveGateway_11" targetRef="Task_15"/>
+<bpmn2:sequenceFlow id="SequenceFlow_15_45" sourceRef="Task_15" targetRef="ExclusiveGateway_45"/>
+<bpmn2:sequenceFlow id="SequenceFlow_45_41" sourceRef="ExclusiveGateway_45" targetRef="ExclusiveGateway_41"/>
+<bpmn2:sequenceFlow id="SequenceFlow_41_7" sourceRef="ExclusiveGateway_41" targetRef="ExclusiveGateway_7"/>
+<bpmn2:sequenceFlow id="SequenceFlow_41_39" sourceRef="ExclusiveGateway_41" targetRef="ExclusiveGateway_39"/>
+<bpmn2:sequenceFlow id="SequenceFlow_39_8" sourceRef="ExclusiveGateway_39" targetRef="Task_8"/>
+<bpmn2:sequenceFlow id="SequenceFlow_8_5" sourceRef="Task_8" targetRef="ExclusiveGateway_5"/>
+<bpmn2:sequenceFlow id="SequenceFlow_39_9" sourceRef="ExclusiveGateway_39" targetRef="Task_9"/>
+<bpmn2:sequenceFlow id="SequenceFlow_9_5" sourceRef="Task_9" targetRef="ExclusiveGateway_5"/>
+<bpmn2:sequenceFlow id="SequenceFlow_39_10" sourceRef="ExclusiveGateway_39" targetRef="Task_10"/>
+<bpmn2:sequenceFlow id="SequenceFlow_10_5" sourceRef="Task_10" targetRef="ExclusiveGateway_5"/>
+<bpmn2:sequenceFlow id="SequenceFlow_39_37" sourceRef="ExclusiveGateway_39" targetRef="ExclusiveGateway_37"/>
+<bpmn2:sequenceFlow id="SequenceFlow_3_6" sourceRef="ExclusiveGateway_3" targetRef="Task_6"/>
+<bpmn2:sequenceFlow id="SequenceFlow_6_37" sourceRef="Task_6" targetRef="ExclusiveGateway_37"/>
+<bpmn2:sequenceFlow id="SequenceFlow_37_35" sourceRef="ExclusiveGateway_37" targetRef="ExclusiveGateway_35"/>
+<bpmn2:sequenceFlow id="SequenceFlow_35_1" sourceRef="ExclusiveGateway_35" targetRef="ExclusiveGateway_1"/>
+<bpmn2:sequenceFlow id="SequenceFlow_35_34" sourceRef="ExclusiveGateway_35" targetRef="ExclusiveGateway_34"/>
+<bpmn2:sequenceFlow id="SequenceFlow_34_2" sourceRef="ExclusiveGateway_34" targetRef="Task_2"/>
+<bpmn2:sequenceFlow id="SequenceFlow_2_0" sourceRef="Task_2" targetRef="ExclusiveGateway_0"/>
+<bpmn2:sequenceFlow id="SequenceFlow_34_-2" sourceRef="ExclusiveGateway_34" targetRef="EndEvent_-2"/>
+</bpmn2:process>
+<bpmndi:BPMNDiagram id="BPMNDiagram_1">
+<bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
+<bpmndi:BPMNShape id="StartEvent_-1_di" bpmnElement="StartEvent_-1">
+<dc:Bounds x="0" y="48.000240000000005" width="36" height="36"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="EndEvent_-2_di" bpmnElement="EndEvent_-2">
+<dc:Bounds x="2596.464" y="97.9992" width="36" height="36"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_0_di" bpmnElement="ExclusiveGateway_0">
+<dc:Bounds x="71.99856" y="41.000400000000006" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_34_di" bpmnElement="ExclusiveGateway_34">
+<dc:Bounds x="2479.01616" y="78.99696" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_1_di" bpmnElement="ExclusiveGateway_1">
+<dc:Bounds x="158.00256" y="68.00256000000002" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_35_di" bpmnElement="ExclusiveGateway_35">
+<dc:Bounds x="2392.9761599999997" y="78.99696" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_3_di" bpmnElement="ExclusiveGateway_3">
+<dc:Bounds x="243.99935999999997" y="128.00016" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_37_di" bpmnElement="ExclusiveGateway_37">
+<dc:Bounds x="2282.52816" y="128.00016" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_5_di" bpmnElement="ExclusiveGateway_5">
+<dc:Bounds x="330.00336" y="295.99776" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_39_di" bpmnElement="ExclusiveGateway_39">
+<dc:Bounds x="2172.00816" y="284.00255999999996" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_7_di" bpmnElement="ExclusiveGateway_7">
+<dc:Bounds x="440.50176" y="295.99776" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_41_di" bpmnElement="ExclusiveGateway_41">
+<dc:Bounds x="2085.96816" y="284.00255999999996" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_11_di" bpmnElement="ExclusiveGateway_11">
+<dc:Bounds x="551.00016" y="344.00016" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_45_di" bpmnElement="ExclusiveGateway_45">
+<dc:Bounds x="2000.00016" y="421.99776" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_16_di" bpmnElement="ExclusiveGateway_16">
+<dc:Bounds x="636.9969600000001" y="374.00255999999996" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_50_di" bpmnElement="ExclusiveGateway_50">
+<dc:Bounds x="882.48816" y="441.99936" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_19_di" bpmnElement="Task_19">
+<dc:Bounds x="722.9879999999999" y="426.99960000000004" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_17_di" bpmnElement="ExclusiveGateway_17">
+<dc:Bounds x="993.00816" y="444.00095999999996" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_51_di" bpmnElement="ExclusiveGateway_51">
+<dc:Bounds x="1914.0321600000002" y="491.00255999999996" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_23_di" bpmnElement="ExclusiveGateway_23">
+<dc:Bounds x="1078.9761600000002" y="470.00016" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_57_di" bpmnElement="ExclusiveGateway_57">
+<dc:Bounds x="1520.9841600000002" y="547.9977600000001" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_26_di" bpmnElement="ExclusiveGateway_26">
+<dc:Bounds x="1189.49616" y="537.9969600000001" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_60_di" bpmnElement="ExclusiveGateway_60">
+<dc:Bounds x="1435.01616" y="547.9977600000001" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_32_di" bpmnElement="Task_32">
+<dc:Bounds x="1299.9959999999999" y="522.9972" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_24_di" bpmnElement="ExclusiveGateway_24">
+<dc:Bounds x="1607.0241600000002" y="569.00016" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="ExclusiveGateway_58_di" bpmnElement="ExclusiveGateway_58">
+<dc:Bounds x="1827.99216" y="525.0009600000001" width="50" height="50"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_27_di" bpmnElement="Task_27">
+<dc:Bounds x="1692.972" y="657.0036" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_28_di" bpmnElement="Task_28">
+<dc:Bounds x="1692.972" y="558.9972" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_29_di" bpmnElement="Task_29">
+<dc:Bounds x="1692.972" y="460.99800000000005" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_30_di" bpmnElement="Task_30">
+<dc:Bounds x="1692.972" y="362.9988" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_31_di" bpmnElement="Task_31">
+<dc:Bounds x="1692.972" y="755.0244" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_21_di" bpmnElement="Task_21">
+<dc:Bounds x="1164.9959999999999" y="349.002" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_22_di" bpmnElement="Task_22">
+<dc:Bounds x="1299.9959999999999" y="743.0004" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_14_di" bpmnElement="Task_14">
+<dc:Bounds x="722.9879999999999" y="289.99800000000005" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_15_di" bpmnElement="Task_15">
+<dc:Bounds x="857.9879999999999" y="672.0012" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_8_di" bpmnElement="Task_8">
+<dc:Bounds x="2258.028" y="567.0036" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_9_di" bpmnElement="Task_9">
+<dc:Bounds x="2258.028" y="233.00280000000004" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_10_di" bpmnElement="Task_10">
+<dc:Bounds x="2258.028" y="783.0323999999999" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_6_di" bpmnElement="Task_6">
+<dc:Bounds x="416.0016" y="113.0004" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="Task_2_di" bpmnElement="Task_2">
+<dc:Bounds x="2564.964" y="0.0007200000000011642" width="100" height="80"/>
+</bpmndi:BPMNShape>
+<bpmndi:BPMNEdge id="SequenceFlow_-1_0_di" bpmnElement="SequenceFlow_-1_0">
+<di:waypoint xsi:type="dc:Point" x="36.088559999999994" y="66.00024"/>
+<di:waypoint xsi:type="dc:Point" x="46.63368" y="66.00024"/>
+<di:waypoint xsi:type="dc:Point" x="60.32088" y="66.00024"/>
+<di:waypoint xsi:type="dc:Point" x="71.95032" y="66.00024"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_0_1_di" bpmnElement="SequenceFlow_0_1">
+<di:waypoint xsi:type="dc:Point" x="116.2296" y="71.85888"/>
+<di:waypoint xsi:type="dc:Point" x="130.3128" y="76.3848"/>
+<di:waypoint xsi:type="dc:Point" x="149.7312" y="82.6272"/>
+<di:waypoint xsi:type="dc:Point" x="163.80720000000002" y="87.15599999999999"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_1_3_di" bpmnElement="SequenceFlow_1_3">
+<di:waypoint xsi:type="dc:Point" x="198.25199999999998" y="103.176"/>
+<di:waypoint xsi:type="dc:Point" x="213.7896" y="114.27839999999999"/>
+<di:waypoint xsi:type="dc:Point" x="238.5072" y="131.93280000000001"/>
+<di:waypoint xsi:type="dc:Point" x="253.9584" y="142.9704"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_3_5_di" bpmnElement="SequenceFlow_3_5">
+<di:waypoint xsi:type="dc:Point" x="278.0568" y="169.1064"/>
+<di:waypoint xsi:type="dc:Point" x="294.0696" y="201.13920000000002"/>
+<di:waypoint xsi:type="dc:Point" x="329.75280000000004" y="272.5056"/>
+<di:waypoint xsi:type="dc:Point" x="345.84479999999996" y="304.69680000000005"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_5_7_di" bpmnElement="SequenceFlow_5_7">
+<di:waypoint xsi:type="dc:Point" x="380.0808" y="320.99760000000003"/>
+<di:waypoint xsi:type="dc:Point" x="398.0592" y="320.99760000000003"/>
+<di:waypoint xsi:type="dc:Point" x="422.5248" y="320.99760000000003"/>
+<di:waypoint xsi:type="dc:Point" x="440.48879999999997" y="320.99760000000003"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_7_11_di" bpmnElement="SequenceFlow_7_11">
+<di:waypoint xsi:type="dc:Point" x="483.4512" y="328.5"/>
+<di:waypoint xsi:type="dc:Point" x="503.8344" y="337.5144"/>
+<di:waypoint xsi:type="dc:Point" x="537.8328" y="352.5552"/>
+<di:waypoint xsi:type="dc:Point" x="558.1656" y="361.5552"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_11_16_di" bpmnElement="SequenceFlow_11_16">
+<di:waypoint xsi:type="dc:Point" x="594.8136000000001" y="375.3648"/>
+<di:waypoint xsi:type="dc:Point" x="609.0696" y="380.4552"/>
+<di:waypoint xsi:type="dc:Point" x="628.9632" y="387.5616"/>
+<di:waypoint xsi:type="dc:Point" x="643.212" y="392.64480000000003"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_16_50_di" bpmnElement="SequenceFlow_16_50">
+<di:waypoint xsi:type="dc:Point" x="684.4464" y="401.5656"/>
+<di:waypoint xsi:type="dc:Point" x="727.848" y="406.7496"/>
+<di:waypoint xsi:type="dc:Point" x="822.024" y="418.0032"/>
+<di:waypoint xsi:type="dc:Point" x="822.024" y="418.0032"/>
+<di:waypoint xsi:type="dc:Point" x="822.024" y="418.0032"/>
+<di:waypoint xsi:type="dc:Point" x="866.592" y="443.8656"/>
+<di:waypoint xsi:type="dc:Point" x="891" y="458.0136"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_16_19_di" bpmnElement="SequenceFlow_16_19">
+<di:waypoint xsi:type="dc:Point" x="678.0888" y="408.456"/>
+<di:waypoint xsi:type="dc:Point" x="689.7312" y="415.7568"/>
+<di:waypoint xsi:type="dc:Point" x="706.5360000000001" y="426.2832"/>
+<di:waypoint xsi:type="dc:Point" x="722.6640000000001" y="436.4064"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_19_50_di" bpmnElement="SequenceFlow_19_50">
+<di:waypoint xsi:type="dc:Point" x="822.24" y="466.99920000000003"/>
+<di:waypoint xsi:type="dc:Point" x="842.76" y="466.99920000000003"/>
+<di:waypoint xsi:type="dc:Point" x="865.5840000000001" y="466.99920000000003"/>
+<di:waypoint xsi:type="dc:Point" x="882.36" y="466.99920000000003"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_50_17_di" bpmnElement="SequenceFlow_50_17">
+<di:waypoint xsi:type="dc:Point" x="932.328" y="467.4384"/>
+<di:waypoint xsi:type="dc:Point" x="950.4" y="467.7696"/>
+<di:waypoint xsi:type="dc:Point" x="975.168" y="468.2304"/>
+<di:waypoint xsi:type="dc:Point" x="993.24" y="468.5616"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_17_23_di" bpmnElement="SequenceFlow_17_23">
+<di:waypoint xsi:type="dc:Point" x="1037.664" y="474.76800000000003"/>
+<di:waypoint xsi:type="dc:Point" x="1051.56" y="479.0808"/>
+<di:waypoint xsi:type="dc:Point" x="1070.496" y="484.9416"/>
+<di:waypoint xsi:type="dc:Point" x="1084.392" y="489.24719999999996"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_23_57_di" bpmnElement="SequenceFlow_23_57">
+<di:waypoint xsi:type="dc:Point" x="1127.5919999999999" y="496.4616"/>
+<di:waypoint xsi:type="dc:Point" x="1196.424" y="500.91119999999995"/>
+<di:waypoint xsi:type="dc:Point" x="1399.0320000000002" y="514.0008"/>
+<di:waypoint xsi:type="dc:Point" x="1399.0320000000002" y="514.0008"/>
+<di:waypoint xsi:type="dc:Point" x="1399.0320000000002" y="514.0008"/>
+<di:waypoint xsi:type="dc:Point" x="1485" y="538.9992"/>
+<di:waypoint xsi:type="dc:Point" x="1485" y="538.9992"/>
+<di:waypoint xsi:type="dc:Point" x="1485" y="538.9992"/>
+<di:waypoint xsi:type="dc:Point" x="1511.784" y="554.1696"/>
+<di:waypoint xsi:type="dc:Point" x="1529.568" y="564.2424000000001"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_23_26_di" bpmnElement="SequenceFlow_23_26">
+<di:waypoint xsi:type="dc:Point" x="1120.104" y="504.45360000000005"/>
+<di:waypoint xsi:type="dc:Point" x="1140.8400000000001" y="517.4496"/>
+<di:waypoint xsi:type="dc:Point" x="1177.8480000000002" y="540.6768000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1198.5120000000002" y="553.6224"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_26_32_di" bpmnElement="SequenceFlow_26_32">
+<di:waypoint xsi:type="dc:Point" x="1239.5520000000001" y="562.9968"/>
+<di:waypoint xsi:type="dc:Point" x="1256.3280000000002" y="562.9968"/>
+<di:waypoint xsi:type="dc:Point" x="1279.296" y="562.9968"/>
+<di:waypoint xsi:type="dc:Point" x="1299.816" y="562.9968"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_32_60_di" bpmnElement="SequenceFlow_32_60">
+<di:waypoint xsi:type="dc:Point" x="1399.0320000000002" y="567.4752"/>
+<di:waypoint xsi:type="dc:Point" x="1412.208" y="568.692"/>
+<di:waypoint xsi:type="dc:Point" x="1425.888" y="569.952"/>
+<di:waypoint xsi:type="dc:Point" x="1436.8319999999999" y="570.96"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_60_26_di" bpmnElement="SequenceFlow_60_26">
+<di:waypoint xsi:type="dc:Point" x="1444.176" y="582.6384"/>
+<di:waypoint xsi:type="dc:Point" x="1426.392" y="594.1872"/>
+<di:waypoint xsi:type="dc:Point" x="1399.0320000000002" y="612"/>
+<di:waypoint xsi:type="dc:Point" x="1399.0320000000002" y="612"/>
+<di:waypoint xsi:type="dc:Point" x="1399.0320000000002" y="612"/>
+<di:waypoint xsi:type="dc:Point" x="1300.0320000000002" y="612"/>
+<di:waypoint xsi:type="dc:Point" x="1300.0320000000002" y="612"/>
+<di:waypoint xsi:type="dc:Point" x="1300.0320000000002" y="612"/>
+<di:waypoint xsi:type="dc:Point" x="1255.392" y="586.1304"/>
+<di:waypoint xsi:type="dc:Point" x="1230.9840000000002" y="571.9896"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_60_57_di" bpmnElement="SequenceFlow_60_57">
+<di:waypoint xsi:type="dc:Point" x="1485.288" y="572.9976"/>
+<di:waypoint xsi:type="dc:Point" x="1496.4479999999999" y="572.9976"/>
+<di:waypoint xsi:type="dc:Point" x="1509.6239999999998" y="572.9976"/>
+<di:waypoint xsi:type="dc:Point" x="1520.784" y="572.9976"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_57_24_di" bpmnElement="SequenceFlow_57_24">
+<di:waypoint xsi:type="dc:Point" x="1566.5040000000001" y="577.872"/>
+<di:waypoint xsi:type="dc:Point" x="1580.04" y="581.2632"/>
+<di:waypoint xsi:type="dc:Point" x="1598.112" y="585.7704"/>
+<di:waypoint xsi:type="dc:Point" x="1611.6480000000001" y="589.1544"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_24_27_di" bpmnElement="SequenceFlow_24_27">
+<di:waypoint xsi:type="dc:Point" x="1645.4160000000002" y="605.8152"/>
+<di:waypoint xsi:type="dc:Point" x="1658.592" y="618.2856"/>
+<di:waypoint xsi:type="dc:Point" x="1680.048" y="638.6328"/>
+<di:waypoint xsi:type="dc:Point" x="1699.344" y="656.9496"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_27_58_di" bpmnElement="SequenceFlow_27_58">
+<di:waypoint xsi:type="dc:Point" x="1783.08" y="656.9856"/>
+<di:waypoint xsi:type="dc:Point" x="1788.408" y="651.6648"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="648"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="648"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="648"/>
+<di:waypoint xsi:type="dc:Point" x="1825.776" y="592.8768"/>
+<di:waypoint xsi:type="dc:Point" x="1842.6239999999998" y="565.3152"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_24_28_di" bpmnElement="SequenceFlow_24_28">
+<di:waypoint xsi:type="dc:Point" x="1656" y="595.0584"/>
+<di:waypoint xsi:type="dc:Point" x="1666.728" y="595.5552"/>
+<di:waypoint xsi:type="dc:Point" x="1679.904" y="596.16"/>
+<di:waypoint xsi:type="dc:Point" x="1692.6480000000001" y="596.7504"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_28_58_di" bpmnElement="SequenceFlow_28_58">
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="577.08"/>
+<di:waypoint xsi:type="dc:Point" x="1807.632" y="570.0456"/>
+<di:waypoint xsi:type="dc:Point" x="1823.8319999999999" y="562.7303999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1835.424" y="557.4744000000001"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_24_29_di" bpmnElement="SequenceFlow_24_29">
+<di:waypoint xsi:type="dc:Point" x="1646.28" y="582.5952"/>
+<di:waypoint xsi:type="dc:Point" x="1658.4479999999999" y="572.22"/>
+<di:waypoint xsi:type="dc:Point" x="1677.0240000000001" y="556.2575999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1694.592" y="541.2024"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_29_58_di" bpmnElement="SequenceFlow_29_58">
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="522.9216"/>
+<di:waypoint xsi:type="dc:Point" x="1807.632" y="529.956"/>
+<di:waypoint xsi:type="dc:Point" x="1823.8319999999999" y="537.2712"/>
+<di:waypoint xsi:type="dc:Point" x="1835.424" y="542.5272"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_24_30_di" bpmnElement="SequenceFlow_24_30">
+<di:waypoint xsi:type="dc:Point" x="1640.232" y="576.8712"/>
+<di:waypoint xsi:type="dc:Point" x="1656.216" y="539.1071999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1693.008" y="452.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1693.008" y="452.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1693.008" y="452.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1696.608" y="448.3368"/>
+<di:waypoint xsi:type="dc:Point" x="1701.864" y="443.01599999999996"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_30_58_di" bpmnElement="SequenceFlow_30_58">
+<di:waypoint xsi:type="dc:Point" x="1783.08" y="443.01599999999996"/>
+<di:waypoint xsi:type="dc:Point" x="1788.408" y="448.3368"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="452.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="452.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="452.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1825.776" y="507.1248"/>
+<di:waypoint xsi:type="dc:Point" x="1842.6239999999998" y="534.6863999999999"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_24_31_di" bpmnElement="SequenceFlow_24_31">
+<di:waypoint xsi:type="dc:Point" x="1639.872" y="611.4384"/>
+<di:waypoint xsi:type="dc:Point" x="1655.64" y="651.3624"/>
+<di:waypoint xsi:type="dc:Point" x="1693.008" y="745.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1693.008" y="745.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1693.008" y="745.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1696.608" y="749.6640000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1701.864" y="754.9920000000001"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_31_58_di" bpmnElement="SequenceFlow_31_58">
+<di:waypoint xsi:type="dc:Point" x="1783.08" y="754.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1788.408" y="749.6640000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="745.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="745.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="745.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1831.392" y="617.2271999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1846.368" y="568.4399999999999"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_58_51_di" bpmnElement="SequenceFlow_58_51">
+<di:waypoint xsi:type="dc:Point" x="1871.424" y="542.952"/>
+<di:waypoint xsi:type="dc:Point" x="1885.8960000000002" y="537.0840000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1906.4879999999998" y="528.7608"/>
+<di:waypoint xsi:type="dc:Point" x="1920.888" y="522.9216"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_17_21_di" bpmnElement="SequenceFlow_17_21">
+<di:waypoint xsi:type="dc:Point" x="1036.296" y="461.90160000000003"/>
+<di:waypoint xsi:type="dc:Point" x="1064.808" y="450.15840000000003"/>
+<di:waypoint xsi:type="dc:Point" x="1122.8400000000001" y="426.2904"/>
+<di:waypoint xsi:type="dc:Point" x="1164.744" y="409.0536"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_21_51_di" bpmnElement="SequenceFlow_21_51">
+<di:waypoint xsi:type="dc:Point" x="1264.176" y="378.2016"/>
+<di:waypoint xsi:type="dc:Point" x="1335.2400000000002" y="362.4408"/>
+<di:waypoint xsi:type="dc:Point" x="1459.008" y="335.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1459.008" y="335.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1459.008" y="335.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1459.008" y="335.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1743.48" y="335.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1743.48" y="335.0016"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="354.00239999999997"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="354.00239999999997"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="354.00239999999997"/>
+<di:waypoint xsi:type="dc:Point" x="1892.16" y="465.09839999999997"/>
+<di:waypoint xsi:type="dc:Point" x="1926.576" y="503.2872"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_17_22_di" bpmnElement="SequenceFlow_17_22">
+<di:waypoint xsi:type="dc:Point" x="1031.112" y="481.14"/>
+<di:waypoint xsi:type="dc:Point" x="1048.68" y="498.672"/>
+<di:waypoint xsi:type="dc:Point" x="1078.992" y="528.9984"/>
+<di:waypoint xsi:type="dc:Point" x="1078.992" y="528.9984"/>
+<di:waypoint xsi:type="dc:Point" x="1078.992" y="528.9984"/>
+<di:waypoint xsi:type="dc:Point" x="1229.8319999999999" y="671.1336000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1305.792" y="742.7520000000001"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_22_51_di" bpmnElement="SequenceFlow_22_51">
+<di:waypoint xsi:type="dc:Point" x="1399.1039999999998" y="803.0160000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1456.704" y="826.704"/>
+<di:waypoint xsi:type="dc:Point" x="1544.9759999999999" y="862.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1544.9759999999999" y="862.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1544.9759999999999" y="862.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1544.9759999999999" y="862.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1743.48" y="862.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1743.48" y="862.9920000000001"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="843.9839999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="843.9839999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1792.008" y="843.9839999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1900.8" y="599.5584"/>
+<di:waypoint xsi:type="dc:Point" x="1930.5359999999998" y="532.7135999999999"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_51_45_di" bpmnElement="SequenceFlow_51_45">
+<di:waypoint xsi:type="dc:Point" x="1953.5040000000001" y="504.9144"/>
+<di:waypoint xsi:type="dc:Point" x="1969.272" y="491.9616"/>
+<di:waypoint xsi:type="dc:Point" x="1995.192" y="470.6712"/>
+<di:waypoint xsi:type="dc:Point" x="2010.816" y="457.8336"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_11_14_di" bpmnElement="SequenceFlow_11_14">
+<di:waypoint xsi:type="dc:Point" x="597.0816" y="364.9752"/>
+<di:waypoint xsi:type="dc:Point" x="626.4936" y="359.0784"/>
+<di:waypoint xsi:type="dc:Point" x="682.1784" y="347.91119999999995"/>
+<di:waypoint xsi:type="dc:Point" x="722.736" y="339.7752"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_14_45_di" bpmnElement="SequenceFlow_14_45">
+<di:waypoint xsi:type="dc:Point" x="822.168" y="323.4024"/>
+<di:waypoint xsi:type="dc:Point" x="893.2320000000001" y="313.7688"/>
+<di:waypoint xsi:type="dc:Point" x="1017" y="297"/>
+<di:waypoint xsi:type="dc:Point" x="1017" y="297"/>
+<di:waypoint xsi:type="dc:Point" x="1017" y="297"/>
+<di:waypoint xsi:type="dc:Point" x="1017" y="297"/>
+<di:waypoint xsi:type="dc:Point" x="1854" y="297"/>
+<di:waypoint xsi:type="dc:Point" x="1854" y="297"/>
+<di:waypoint xsi:type="dc:Point" x="1971.72" y="400.8384"/>
+<di:waypoint xsi:type="dc:Point" x="2011.248" y="435.7224"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_11_15_di" bpmnElement="SequenceFlow_11_15">
+<di:waypoint xsi:type="dc:Point" x="588.852" y="381.64320000000004"/>
+<di:waypoint xsi:type="dc:Point" x="606.3408000000001" y="400.2984"/>
+<di:waypoint xsi:type="dc:Point" x="636.9984000000001" y="433.00079999999997"/>
+<di:waypoint xsi:type="dc:Point" x="636.9984000000001" y="433.00079999999997"/>
+<di:waypoint xsi:type="dc:Point" x="636.9984000000001" y="433.00079999999997"/>
+<di:waypoint xsi:type="dc:Point" x="792.936" y="594.4680000000001"/>
+<di:waypoint xsi:type="dc:Point" x="867.6" y="671.7312"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_15_45_di" bpmnElement="SequenceFlow_15_45">
+<di:waypoint xsi:type="dc:Point" x="949.7520000000001" y="752.112"/>
+<di:waypoint xsi:type="dc:Point" x="1006.848" y="807.5519999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1102.968" y="901.0079999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1102.968" y="901.0079999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1102.968" y="901.0079999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1102.968" y="901.0079999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1854" y="901.0079999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1854" y="901.0079999999999"/>
+<di:waypoint xsi:type="dc:Point" x="1986.192" y="547.956"/>
+<di:waypoint xsi:type="dc:Point" x="2017.44" y="464.5224"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_45_41_di" bpmnElement="SequenceFlow_45_41">
+<di:waypoint xsi:type="dc:Point" x="2035.1519999999998" y="431.9712"/>
+<di:waypoint xsi:type="dc:Point" x="2051.2799999999997" y="405.42479999999995"/>
+<di:waypoint xsi:type="dc:Point" x="2084.688" y="350.54639999999995"/>
+<di:waypoint xsi:type="dc:Point" x="2100.888" y="324.0144"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_41_7_di" bpmnElement="SequenceFlow_41_7">
+<di:waypoint xsi:type="dc:Point" x="2091.168" y="303.4584"/>
+<di:waypoint xsi:type="dc:Point" x="2046.888" y="290.4408"/>
+<di:waypoint xsi:type="dc:Point" x="1939.9679999999998" y="258.9984"/>
+<di:waypoint xsi:type="dc:Point" x="1939.9679999999998" y="258.9984"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="258.9984"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="258.9984"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="258.9984"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="258.9984"/>
+<di:waypoint xsi:type="dc:Point" x="533.2176000000001" y="299.736"/>
+<di:waypoint xsi:type="dc:Point" x="484.7976" y="315.1656"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_41_39_di" bpmnElement="SequenceFlow_41_39">
+<di:waypoint xsi:type="dc:Point" x="2136.312" y="309.00239999999997"/>
+<di:waypoint xsi:type="dc:Point" x="2147.472" y="309.00239999999997"/>
+<di:waypoint xsi:type="dc:Point" x="2160.648" y="309.00239999999997"/>
+<di:waypoint xsi:type="dc:Point" x="2171.736" y="309.00239999999997"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_39_8_di" bpmnElement="SequenceFlow_39_8">
+<di:waypoint xsi:type="dc:Point" x="2204.496" y="326.7504"/>
+<di:waypoint xsi:type="dc:Point" x="2221.488" y="373.5504"/>
+<di:waypoint xsi:type="dc:Point" x="2268" y="501.2064"/>
+<di:waypoint xsi:type="dc:Point" x="2291.904" y="566.8488"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_8_5_di" bpmnElement="SequenceFlow_8_5">
+<di:waypoint xsi:type="dc:Point" x="2283.048" y="647.0496"/>
+<di:waypoint xsi:type="dc:Point" x="2231.2799999999997" y="735.3359999999999"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="939.024"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="939.024"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="939.024"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="939.024"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="939.024"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="939.024"/>
+<di:waypoint xsi:type="dc:Point" x="398.2248" y="440.1576"/>
+<di:waypoint xsi:type="dc:Point" x="362.3184" y="338.83200000000005"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_39_9_di" bpmnElement="SequenceFlow_39_9">
+<di:waypoint xsi:type="dc:Point" x="2216.376" y="302.88960000000003"/>
+<di:waypoint xsi:type="dc:Point" x="2227.752" y="299.12399999999997"/>
+<di:waypoint xsi:type="dc:Point" x="2242.944" y="294.0912"/>
+<di:waypoint xsi:type="dc:Point" x="2257.56" y="289.2312"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_9_5_di" bpmnElement="SequenceFlow_9_5">
+<di:waypoint xsi:type="dc:Point" x="2257.92" y="260.0136"/>
+<di:waypoint xsi:type="dc:Point" x="2200.3199999999997" y="244.61280000000002"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="220.9968"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="220.9968"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="220.9968"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="220.9968"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="220.9968"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="220.9968"/>
+<di:waypoint xsi:type="dc:Point" x="416.0016" y="286.9992"/>
+<di:waypoint xsi:type="dc:Point" x="416.0016" y="286.9992"/>
+<di:waypoint xsi:type="dc:Point" x="416.0016" y="286.9992"/>
+<di:waypoint xsi:type="dc:Point" x="389.23199999999997" y="302.16959999999995"/>
+<di:waypoint xsi:type="dc:Point" x="371.448" y="312.24240000000003"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_39_10_di" bpmnElement="SequenceFlow_39_10">
+<di:waypoint xsi:type="dc:Point" x="2201.5440000000003" y="329.6664"/>
+<di:waypoint xsi:type="dc:Point" x="2214.504" y="404.3664"/>
+<di:waypoint xsi:type="dc:Point" x="2257.992" y="655.9992"/>
+<di:waypoint xsi:type="dc:Point" x="2257.992" y="655.9992"/>
+<di:waypoint xsi:type="dc:Point" x="2257.992" y="655.9992"/>
+<di:waypoint xsi:type="dc:Point" x="2280.528" y="733.608"/>
+<di:waypoint xsi:type="dc:Point" x="2294.856" y="783"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_10_5_di" bpmnElement="SequenceFlow_10_5">
+<di:waypoint xsi:type="dc:Point" x="2257.92" y="861.48"/>
+<di:waypoint xsi:type="dc:Point" x="2200.3199999999997" y="907.056"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="976.9680000000001"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="976.9680000000001"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="976.9680000000001"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="976.9680000000001"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="976.9680000000001"/>
+<di:waypoint xsi:type="dc:Point" x="574.9992" y="976.9680000000001"/>
+<di:waypoint xsi:type="dc:Point" x="416.0016" y="643.9968"/>
+<di:waypoint xsi:type="dc:Point" x="416.0016" y="643.9968"/>
+<di:waypoint xsi:type="dc:Point" x="416.0016" y="643.9968"/>
+<di:waypoint xsi:type="dc:Point" x="373.0896" y="412.9848"/>
+<di:waypoint xsi:type="dc:Point" x="359.84159999999997" y="341.6976"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_39_37_di" bpmnElement="SequenceFlow_39_37">
+<di:waypoint xsi:type="dc:Point" x="2208.0240000000003" y="294.60240000000005"/>
+<di:waypoint xsi:type="dc:Point" x="2228.688" y="264.888"/>
+<di:waypoint xsi:type="dc:Point" x="2275.848" y="197.0496"/>
+<di:waypoint xsi:type="dc:Point" x="2296.512" y="167.364"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_3_6_di" bpmnElement="SequenceFlow_3_6">
+<di:waypoint xsi:type="dc:Point" x="294.24240000000003" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="324.48240000000004" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="376.9344" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="415.6488" y="153"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_6_37_di" bpmnElement="SequenceFlow_6_37">
+<di:waypoint xsi:type="dc:Point" x="515.0808" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="572.688" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="661.0032" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="2111.9759999999997" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="2230.128" y="153"/>
+<di:waypoint xsi:type="dc:Point" x="2282.256" y="153"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_37_35_di" bpmnElement="SequenceFlow_37_35">
+<di:waypoint xsi:type="dc:Point" x="2325.456" y="145.3464"/>
+<di:waypoint xsi:type="dc:Point" x="2345.8320000000003" y="136.1376"/>
+<di:waypoint xsi:type="dc:Point" x="2379.816" y="120.7872"/>
+<di:waypoint xsi:type="dc:Point" x="2400.192" y="111.60000000000001"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_35_1_di" bpmnElement="SequenceFlow_35_1">
+<di:waypoint xsi:type="dc:Point" x="2394.7920000000004" y="102.0744"/>
+<di:waypoint xsi:type="dc:Point" x="2339.136" y="97.2432"/>
+<di:waypoint xsi:type="dc:Point" x="2198.016" y="85.0032"/>
+<di:waypoint xsi:type="dc:Point" x="2198.016" y="85.0032"/>
+<di:waypoint xsi:type="dc:Point" x="354.00239999999997" y="85.0032"/>
+<di:waypoint xsi:type="dc:Point" x="354.00239999999997" y="85.0032"/>
+<di:waypoint xsi:type="dc:Point" x="354.00239999999997" y="85.0032"/>
+<di:waypoint xsi:type="dc:Point" x="354.00239999999997" y="85.0032"/>
+<di:waypoint xsi:type="dc:Point" x="253.332" y="89.7408"/>
+<di:waypoint xsi:type="dc:Point" x="206.928" y="91.9224"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_35_34_di" bpmnElement="SequenceFlow_35_34">
+<di:waypoint xsi:type="dc:Point" x="2443.32" y="103.9968"/>
+<di:waypoint xsi:type="dc:Point" x="2454.408" y="103.9968"/>
+<di:waypoint xsi:type="dc:Point" x="2467.6560000000004" y="103.9968"/>
+<di:waypoint xsi:type="dc:Point" x="2478.744" y="103.9968"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_34_2_di" bpmnElement="SequenceFlow_34_2">
+<di:waypoint xsi:type="dc:Point" x="2520.576" y="94.8312"/>
+<di:waypoint xsi:type="dc:Point" x="2532.1679999999997" y="87.984"/>
+<di:waypoint xsi:type="dc:Point" x="2548.6560000000004" y="78.2352"/>
+<di:waypoint xsi:type="dc:Point" x="2564.568" y="68.85072"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_2_0_di" bpmnElement="SequenceFlow_2_0">
+<di:waypoint xsi:type="dc:Point" x="2564.9280000000003" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="2507.328" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="2418.984" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="2418.984" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="267.9984" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="267.9984" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="267.9984" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="267.9984" y="40.00032"/>
+<di:waypoint xsi:type="dc:Point" x="164.23919999999998" y="55.869119999999995"/>
+<di:waypoint xsi:type="dc:Point" x="118.84320000000001" y="62.81208"/>
+</bpmndi:BPMNEdge>
+<bpmndi:BPMNEdge id="SequenceFlow_34_-2_di" bpmnElement="SequenceFlow_34_-2">
+<di:waypoint xsi:type="dc:Point" x="2526.6960000000004" y="106.4016"/>
+<di:waypoint xsi:type="dc:Point" x="2547.216" y="108.6696"/>
+<di:waypoint xsi:type="dc:Point" x="2577.6" y="112.03200000000001"/>
+<di:waypoint xsi:type="dc:Point" x="2596.464" y="114.12"/>
+</bpmndi:BPMNEdge>
+</bpmndi:BPMNPlane>
+</bpmndi:BPMNDiagram>
+<bpmn2:extensionElements/>
+</bpmn2:definitions>
