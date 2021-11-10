@@ -1,0 +1,18 @@
+# Práctica 4 - Ejercicio de Test
+
+![1](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/1.PNG)
+![2](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/2.PNG)
+![3](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/3.PNG)
+![4](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/4.PNG)
+![5](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/5.PNG)
+![6](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/6.PNG)
+![7](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/7.PNG)
+![8](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/8.PNG)
+![9](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/9.PNG)
+![10](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/10.PNG)
+![11](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/11.PNG)
+![12](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/12.PNG)
+![13](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/13.PNG)
+![14](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/14.PNG)
+![15](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/15.PNG)
+![16](https://github.com/ETSIIWorkgroup/BPMN_GPS/blob/main/Pr%C3%A1cticas/Pr%C3%A1ctica_4/Test/Im%C3%A1genes/16.PNG)
