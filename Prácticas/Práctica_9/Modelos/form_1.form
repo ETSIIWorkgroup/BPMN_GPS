@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "text": "# Formulario",
+      "type": "text",
+      "id": "Field_0z4thrx"
+    },
+    {
+      "label": "Valor de la variable",
+      "type": "textfield",
+      "id": "Field_1yo0l0v",
+      "key": "result"
+    },
+    {
+      "action": "submit",
+      "label": "Finalizar",
+      "type": "button",
+      "id": "Field_0eo3oo1",
+      "key": "field_15t7hza"
+    }
+  ],
+  "type": "default",
+  "id": "Form_004ygp9"
+}
