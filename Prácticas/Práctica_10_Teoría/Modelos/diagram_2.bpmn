@@ -7,11 +7,16 @@
     <bpmn:endEvent id="Event_1jxtjms">
       <bpmn:incoming>Flow_06gzzkf</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:userTask id="Activity_0wnjx27" name="Confirmar resultados">
+    <bpmn:userTask id="Activity_0wnjx27" name="Confirmar resultados" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="response" label="Respuesta a solicitud de reserva" type="string" />
+        </camunda:formData>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_0yaeh54</bpmn:incoming>
       <bpmn:outgoing>Flow_06gzzkf</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:businessRuleTask id="Activity_0d4ngxg" name="Decidir reserva">
+    <bpmn:businessRuleTask id="Activity_0d4ngxg" name="Decidir reserva" camunda:resultVariable="response" camunda:decisionRef="dec_reserva" camunda:mapDecisionResult="singleEntry">
       <bpmn:incoming>Flow_1oij0na</bpmn:incoming>
       <bpmn:outgoing>Flow_0yaeh54</bpmn:outgoing>
     </bpmn:businessRuleTask>
@@ -19,7 +24,11 @@
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="personas" label="Número de personas" type="long" />
-          <camunda:formField id="turno" label="Turno de reserva" type="enum" />
+          <camunda:formField id="turno" label="Turno de reserva" type="enum">
+            <camunda:value id="manana" name="mañana" />
+            <camunda:value id="tarde" name="tarde" />
+            <camunda:value id="noche" name="noche" />
+          </camunda:formField>
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_0tjcrkh</bpmn:incoming>
