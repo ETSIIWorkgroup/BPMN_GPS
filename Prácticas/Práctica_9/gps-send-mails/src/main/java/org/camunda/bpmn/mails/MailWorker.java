@@ -16,7 +16,7 @@ public class MailWorker {
 		client.subscribe("payment-mail")
 		.lockDuration(1000)
 		.handler((externalTask, externalTaskService) -> {
-			String mail = (String) externalTask.getVariable("mail");
+			String mail = (String) externalTask.getVariable("email");
 			String user = (String) externalTask.getVariable("user");
 			String item = (String) externalTask.getVariable("item");
 			Long amount = (Long) externalTask.getVariable("amount");
@@ -27,7 +27,7 @@ public class MailWorker {
 					+ "\n - Item: " + item + "\n - Cantidad: " + amount);
 			
 			try {
-				sendMail.sendMail(mail,user,item,amount);
+				sendMail.sendMail("alejandrofertry@gmail.com","Alejandro","GPS Item",800);
 				LOGGER.info(">> El correo electrónico ha sido enviado...");
 			} catch(Exception e) {
 				LOGGER.info(">> El correo electrónico no ha sido enviado...");
