@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1maqari" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.11.1" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.15.0">
+  <bpmn:process id="payment_mail" name="Payment Mail" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1">
+      <bpmn:outgoing>Flow_0zq3q9h</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_0jlb5rk">
+      <bpmn:incoming>Flow_1os87vc</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0zq3q9h" sourceRef="StartEvent_1" targetRef="Activity_04b0ot2" />
+    <bpmn:sequenceFlow id="Flow_15xo0ez" sourceRef="Activity_04b0ot2" targetRef="Activity_send" />
+    <bpmn:sequenceFlow id="Flow_1os87vc" sourceRef="Activity_send" targetRef="Event_0jlb5rk" />
+    <bpmn:userTask id="Activity_04b0ot2" name="Approve Data" camunda:assignee="demo">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="mail" label="E-mail" type="string" />
+          <camunda:formField id="item" label="Item:" type="string" />
+          <camunda:formField id="user" label="Usuario:" type="string" />
+          <camunda:formField id="amount" label="Cantidad:" type="long" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_0zq3q9h</bpmn:incoming>
+      <bpmn:outgoing>Flow_15xo0ez</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:sendTask id="Activity_send" name="Send Information" camunda:type="external" camunda:topic="payment-mail">
+      <bpmn:incoming>Flow_15xo0ez</bpmn:incoming>
+      <bpmn:outgoing>Flow_1os87vc</bpmn:outgoing>
+    </bpmn:sendTask>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="payment_mail">
+      <bpmndi:BPMNEdge id="Flow_1os87vc_di" bpmnElement="Flow_1os87vc">
+        <di:waypoint x="550" y="117" />
+        <di:waypoint x="642" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15xo0ez_di" bpmnElement="Flow_15xo0ez">
+        <di:waypoint x="380" y="117" />
+        <di:waypoint x="450" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0zq3q9h_di" bpmnElement="Flow_0zq3q9h">
+        <di:waypoint x="215" y="117" />
+        <di:waypoint x="280" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="179" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0jlb5rk_di" bpmnElement="Event_0jlb5rk">
+        <dc:Bounds x="642" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1d83rot_di" bpmnElement="Activity_04b0ot2">
+        <dc:Bounds x="280" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_071bwyt_di" bpmnElement="Activity_send">
+        <dc:Bounds x="450" y="77" width="100" height="80" />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

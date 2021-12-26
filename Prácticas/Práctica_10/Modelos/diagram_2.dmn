@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_0gl04jy" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="dec_reserva" name="Decidir reserva">
+    <decisionTable id="DecisionTable_18gay4g">
+      <input id="Input_1" label="Turno" camunda:inputVariable="turno">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text>turno</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0hdsuc6" label="Num Personas" camunda:inputVariable="personas">
+        <inputExpression id="LiteralExpression_0lj1cdz" typeRef="long">
+          <text>personas</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Response" name="response" typeRef="string" />
+      <rule id="DecisionRule_0icwk4z">
+        <inputEntry id="UnaryTests_18g7jsc">
+          <text>"manana"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mvp0q8">
+          <text>&lt;5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0k5plt5">
+          <text>"Reserva realizada"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1x0zf9u">
+        <inputEntry id="UnaryTests_1eo9bz5">
+          <text>"manana"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07gipvi">
+          <text>&gt;=5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1wzvhsh">
+          <text>"No hay mesas"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1j9bxsp">
+        <inputEntry id="UnaryTests_1hbdyps">
+          <text>"tarde"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pf2c1v">
+          <text>&lt;5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1pi0nx4">
+          <text>"No hay mesas"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01m59f7">
+        <inputEntry id="UnaryTests_0sajp49">
+          <text>"tarde"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ev9skq">
+          <text>&gt;=5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fbzws6">
+          <text>"No hay mesas"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0c3h9uh">
+        <inputEntry id="UnaryTests_0ozj5ks">
+          <text>"noche"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bleunq">
+          <text>&lt;5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gaulo3">
+          <text>"Reserva realizada"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_17a4w1t">
+        <inputEntry id="UnaryTests_0ufjssq">
+          <text>"noche"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_18mlbav">
+          <text>&gt;=5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07vgctd">
+          <text>"Reserva realizada"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="dec_reserva">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>

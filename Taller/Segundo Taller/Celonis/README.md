@@ -1,3 +1,0 @@
-- LineChart: muestra el número de actividades ejecutadas por año.
-- General: por cada año, distinguiendo entre tareas, el número de veces que se ejecutan
-- LastChart: Número de tareas ejecutadas filtrando por año y mes
