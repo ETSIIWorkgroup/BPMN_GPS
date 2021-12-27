@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "text": "# Formulario de control de parámetros del paciente",
+      "type": "text",
+      "id": "Field_1x59mjc"
+    },
+    {
+      "label": "Valor TAM",
+      "type": "number",
+      "id": "Field_105x1fd",
+      "key": "valor_tam",
+      "description": "Valor de la tensión arterial media del paciente (mmHg).",
+      "validate": {
+        "required": true,
+        "max": 80,
+        "min": 0
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Enviar",
+      "type": "button",
+      "id": "Field_0yjryok",
+      "key": "field_0omd5qs"
+    }
+  ],
+  "type": "default",
+  "id": "form_tam"
+}

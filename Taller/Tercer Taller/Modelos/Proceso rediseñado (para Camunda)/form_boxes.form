@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "text": "# Detalles del alta de paciente ",
+      "type": "text",
+      "id": "Field_1g44fxr"
+    },
+    {
+      "label": "Observaciones",
+      "type": "textfield",
+      "id": "Field_1leehe9",
+      "key": "observaciones",
+      "description": "(opcional)"
+    },
+    {
+      "label": "Apto para alta",
+      "type": "checkbox",
+      "id": "Field_0wfah9n",
+      "key": "apto_alta"
+    },
+    {
+      "text": "-- Aprobado por el personal abajo firmante",
+      "type": "text",
+      "id": "Field_0plpl8g"
+    },
+    {
+      "type": "textfield",
+      "id": "Field_1jhm3w7",
+      "key": "firma",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "form_boxes"
+}
