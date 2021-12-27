@@ -43,7 +43,7 @@
         <bpmn:flowNodeRef>Event_0k0ecl8</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>enviar_historial</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>hoja_boxes</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>medir_tam</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>medir_tam_cristaloides</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>obtener_parametros</bpmn:flowNodeRef>
       </bpmn:lane>
     </bpmn:laneSet>
@@ -223,7 +223,7 @@
     <bpmn:boundaryEvent id="Event_0k0ecl8" name="¿TAM &#62;= 65?" attachedToRef="suministrar_vasopresores">
       <bpmn:outgoing>Flow_0a8bbo0</bpmn:outgoing>
       <bpmn:conditionalEventDefinition id="ConditionalEventDefinition_1odm25q">
-        <bpmn:condition xsi:type="bpmn:tFormalExpression" />
+        <bpmn:condition xsi:type="bpmn:tFormalExpression">${TAM&gt;=65}</bpmn:condition>
       </bpmn:conditionalEventDefinition>
     </bpmn:boundaryEvent>
     <bpmn:sequenceFlow id="Flow_05z2nuk" sourceRef="StartEvent_1" targetRef="inspeccionar_sintomas" />
@@ -231,8 +231,12 @@
     <bpmn:sequenceFlow id="Flow_1lf5yxq" name="SI" sourceRef="Gateway_1j15umq" targetRef="quick_sofa" />
     <bpmn:sequenceFlow id="Flow_1dhwrze" name="NO" sourceRef="Gateway_1j15umq" targetRef="Event_0492vq1" />
     <bpmn:sequenceFlow id="Flow_0g638ok" sourceRef="quick_sofa" targetRef="Gateway_1jl8pdw" />
-    <bpmn:sequenceFlow id="Flow_0z558nn" name="NO" sourceRef="Gateway_1jl8pdw" targetRef="Event_1mmtn40" />
-    <bpmn:sequenceFlow id="Flow_0eq3c0k" name="SI" sourceRef="Gateway_1jl8pdw" targetRef="Gateway_0qnw9y6" />
+    <bpmn:sequenceFlow id="Flow_0z558nn" name="NO" sourceRef="Gateway_1jl8pdw" targetRef="Event_1mmtn40">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!quick_sofa_positivo}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0eq3c0k" name="SI" sourceRef="Gateway_1jl8pdw" targetRef="Gateway_0qnw9y6">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${quick_sofa_positivo}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0vw8eka" sourceRef="Gateway_0qnw9y6" targetRef="hoja_triaje" />
     <bpmn:sequenceFlow id="Flow_045wbtb" sourceRef="Gateway_0qnw9y6" targetRef="trasladar_paciente" />
     <bpmn:sequenceFlow id="Flow_17jv9ui" sourceRef="hoja_triaje" targetRef="Gateway_1xby63t" />
@@ -240,28 +244,44 @@
     <bpmn:sequenceFlow id="Flow_072til0" sourceRef="Gateway_1xby63t" targetRef="colocar_vias" />
     <bpmn:sequenceFlow id="Flow_1c2sj2w" sourceRef="colocar_vias" targetRef="realizar_sofa" />
     <bpmn:sequenceFlow id="Flow_1fh340m" sourceRef="realizar_sofa" targetRef="Gateway_0e6lz36" />
-    <bpmn:sequenceFlow id="Flow_1rhhsmk" name="NO" sourceRef="Gateway_0e6lz36" targetRef="Event_0n3qwx7" />
-    <bpmn:sequenceFlow id="Flow_1aap3nt" name="SI" sourceRef="Gateway_0e6lz36" targetRef="Gateway_1b8z0u9" />
+    <bpmn:sequenceFlow id="Flow_1rhhsmk" name="NO" sourceRef="Gateway_0e6lz36" targetRef="Event_0n3qwx7">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!sofa_positivo}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1aap3nt" name="SI" sourceRef="Gateway_0e6lz36" targetRef="Gateway_1b8z0u9">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${sofa_positivo}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1nzj6em" sourceRef="Gateway_1b8z0u9" targetRef="Gateway_0lcg0l6" />
     <bpmn:sequenceFlow id="Flow_16oc3ww" sourceRef="Gateway_0lcg0l6" targetRef="administrar_cristaloides" />
     <bpmn:sequenceFlow id="Flow_0mvc22k" sourceRef="Gateway_1b8z0u9" targetRef="extraer_hemocultivos" />
     <bpmn:sequenceFlow id="Flow_1lfyffy" sourceRef="Gateway_1b8z0u9" targetRef="suministrar_antibioticos" />
     <bpmn:sequenceFlow id="Flow_06aos04" sourceRef="Gateway_1b8z0u9" targetRef="obtener_parametros" />
     <bpmn:sequenceFlow id="Flow_0pufdxc" sourceRef="Gateway_1b8z0u9" targetRef="obtener_muestras" />
-    <bpmn:sequenceFlow id="Flow_1fxyxl7" sourceRef="administrar_cristaloides" targetRef="medir_tam" />
-    <bpmn:sequenceFlow id="Flow_1j2ygvj" sourceRef="medir_tam" targetRef="Gateway_1ikd0rm" />
-    <bpmn:sequenceFlow id="Flow_1y697ww" name="SI" sourceRef="Gateway_1ikd0rm" targetRef="Gateway_095kuno" />
-    <bpmn:sequenceFlow id="Flow_165c6rr" name="NO" sourceRef="Gateway_095kuno" targetRef="Gateway_0lcg0l6" />
-    <bpmn:sequenceFlow id="Flow_0qg33uj" name="NO" sourceRef="Gateway_1ikd0rm" targetRef="suministrar_vasopresores" />
+    <bpmn:sequenceFlow id="Flow_1fxyxl7" sourceRef="administrar_cristaloides" targetRef="medir_tam_cristaloides" />
+    <bpmn:sequenceFlow id="Flow_1j2ygvj" sourceRef="medir_tam_cristaloides" targetRef="Gateway_1ikd0rm" />
+    <bpmn:sequenceFlow id="Flow_1y697ww" name="SI" sourceRef="Gateway_1ikd0rm" targetRef="Gateway_095kuno">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${respuesta_positiva}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_165c6rr" name="NO" sourceRef="Gateway_095kuno" targetRef="Gateway_0lcg0l6">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${TAM&lt;65}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0qg33uj" name="NO" sourceRef="Gateway_1ikd0rm" targetRef="suministrar_vasopresores">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!respuesta_positiva}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1itum8s" sourceRef="Gateway_19lzslp" targetRef="Gateway_18p56lv" />
-    <bpmn:sequenceFlow id="Flow_1yyj5ug" name="NO" sourceRef="Gateway_18p56lv" targetRef="medir_lactato" />
+    <bpmn:sequenceFlow id="Flow_1yyj5ug" name="NO" sourceRef="Gateway_18p56lv" targetRef="medir_lactato">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!niveles_correctos}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1ub7nkj" sourceRef="medir_lactato" targetRef="Gateway_19lzslp" />
     <bpmn:sequenceFlow id="Flow_0hdeqf7" sourceRef="obtener_parametros" targetRef="Gateway_19lzslp" />
     <bpmn:sequenceFlow id="Flow_0o3q6cm" sourceRef="obtener_muestras" targetRef="Gateway_08iisuj" />
-    <bpmn:sequenceFlow id="Flow_1cckwkq" name="SI" sourceRef="Gateway_18p56lv" targetRef="Gateway_08iisuj" />
+    <bpmn:sequenceFlow id="Flow_1cckwkq" name="SI" sourceRef="Gateway_18p56lv" targetRef="Gateway_08iisuj">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${niveles_correctos}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_15pu0h2" sourceRef="suministrar_antibioticos" targetRef="Gateway_08iisuj" />
     <bpmn:sequenceFlow id="Flow_1uifr8v" sourceRef="extraer_hemocultivos" targetRef="Gateway_08iisuj" />
-    <bpmn:sequenceFlow id="Flow_0a171vj" name="SI" sourceRef="Gateway_095kuno" targetRef="Gateway_1b6crx5" />
+    <bpmn:sequenceFlow id="Flow_0a171vj" name="SI" sourceRef="Gateway_095kuno" targetRef="Gateway_1b6crx5">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${TAM&gt;=65}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0a8bbo0" sourceRef="Event_0k0ecl8" targetRef="Gateway_1b6crx5" />
     <bpmn:sequenceFlow id="Flow_1cl3q53" sourceRef="Gateway_1b6crx5" targetRef="Gateway_08iisuj" />
     <bpmn:sequenceFlow id="Flow_16jiu30" sourceRef="suministrar_vasopresores" targetRef="comunicar_defucion" />
@@ -277,6 +297,7 @@
           <camunda:formField id="frecuencia_respiratoria" label="Frecuencia respiratoria" type="long" />
           <camunda:formField id="tension_arterial" label="Tensión arterial" type="long" />
           <camunda:formField id="alteracion_mental" label="Alteración estado mental" type="boolean" />
+          <camunda:formField id="quick_sofa_positivo" label="Quick-SOFA Positivo" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1lf5yxq</bpmn:incoming>
@@ -308,6 +329,7 @@
           <camunda:formField id="TAM" label="Nivel TAM" type="long" />
           <camunda:formField id="nivel_bilirrubina" label="Nivel Bilirrubina" type="long" />
           <camunda:formField id="nivel_plaquetas" label="Nivel Plaquetas" type="long" />
+          <camunda:formField id="sofa_positivo" label="SOFA Positivo" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1c2sj2w</bpmn:incoming>
@@ -333,7 +355,7 @@
       <bpmn:extensionElements>
         <camunda:formData>
           <camunda:formField id="niveles_lactato" label="Nivel de lactato" type="long" />
-          <camunda:formField id="niveles_correctos" label="Niveles dentro de lo correcto" type="boolean" />
+          <camunda:formField id="niveles_correctos" label="¿Niveles lactato normales?" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1yyj5ug</bpmn:incoming>
@@ -366,7 +388,13 @@
         <bpmn:targetRef>BBDD</bpmn:targetRef>
       </bpmn:dataOutputAssociation>
     </bpmn:userTask>
-    <bpmn:userTask id="medir_tam" name="Medir TAM" camunda:formKey="camunda-forms:deployment:form_tam.form" camunda:assignee="enfermero">
+    <bpmn:userTask id="medir_tam_cristaloides" name="Medir TAM y respuesta ante cristaloides" camunda:assignee="enfermero">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="TAM" label="Nivel TAM" type="long" />
+          <camunda:formField id="respuesta_positiva" label="¿Respuesta positiva a los cristaloides?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
       <bpmn:incoming>Flow_1fxyxl7</bpmn:incoming>
       <bpmn:outgoing>Flow_1j2ygvj</bpmn:outgoing>
     </bpmn:userTask>
@@ -728,15 +756,13 @@
           <dc:Bounds x="956" y="162" width="88" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1854kic_di" bpmnElement="medir_tam">
-        <dc:Bounds x="1690" y="420" width="100" height="80" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1rkw6vj_di" bpmnElement="obtener_parametros">
-        <dc:Bounds x="1570" y="1030" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0sy7cf6_di" bpmnElement="suministrar_vasopresores" isExpanded="true">
         <dc:Bounds x="1960" y="420" width="1230" height="370" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_13dufk3_di" bpmnElement="Flow_13dufk3">
+        <di:waypoint x="2730" y="580" />
+        <di:waypoint x="2750" y="580" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_13tx5ev_di" bpmnElement="Flow_13tx5ev">
         <di:waypoint x="3090" y="580" />
         <di:waypoint x="3132" y="580" />
@@ -748,10 +774,6 @@
       <bpmndi:BPMNEdge id="Flow_0plk591_di" bpmnElement="Flow_0plk591">
         <di:waypoint x="2850" y="580" />
         <di:waypoint x="2870" y="580" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_13dufk3_di" bpmnElement="Flow_13dufk3">
-        <di:waypoint x="2730" y="580" />
-        <di:waypoint x="2750" y="580" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1fdi2pk_di" bpmnElement="Flow_1fdi2pk">
         <di:waypoint x="2605" y="580" />
@@ -861,9 +883,6 @@
       <bpmndi:BPMNShape id="Activity_1w6il4y_di" bpmnElement="aumentar_noradrenalina">
         <dc:Bounds x="2230" y="690" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_14pl75q_di" bpmnElement="administrar_adrenalina">
-        <dc:Bounds x="2630" y="540" width="100" height="80" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_07bec7p_di" bpmnElement="Activity_0wjmqmf">
         <dc:Bounds x="2750" y="540" width="100" height="80" />
       </bpmndi:BPMNShape>
@@ -875,6 +894,9 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_13mddvm_di" bpmnElement="medir464">
         <dc:Bounds x="2310" y="460" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_14pl75q_di" bpmnElement="administrar_adrenalina">
+        <dc:Bounds x="2630" y="540" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0a7sxd8_di" bpmnElement="inspeccionar_sintomas">
         <dc:Bounds x="280" y="250" width="100" height="80" />
@@ -929,6 +951,12 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1fvc954_di" bpmnElement="hoja_boxes">
         <dc:Bounds x="3290" y="1030" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1854kic_di" bpmnElement="medir_tam_cristaloides">
+        <dc:Bounds x="1690" y="420" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1rkw6vj_di" bpmnElement="obtener_parametros">
+        <dc:Bounds x="1570" y="1030" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="TextAnnotation_0bhrj2n_di" bpmnElement="TextAnnotation_0bhrj2n">
         <dc:Bounds x="360" y="190" width="100" height="40" />
