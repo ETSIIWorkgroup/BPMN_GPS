@@ -10,7 +10,7 @@
       "label": "Valor TAM",
       "type": "number",
       "id": "Field_105x1fd",
-      "key": "valor_tam",
+      "key": "TAM",
       "description": "Valor de la tensión arterial media del paciente (mmHg).",
       "validate": {
         "required": true,

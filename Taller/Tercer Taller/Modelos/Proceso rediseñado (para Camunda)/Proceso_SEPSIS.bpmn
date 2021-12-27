@@ -155,18 +155,24 @@
         <bpmn:incoming>Flow_16wnf2x</bpmn:incoming>
         <bpmn:outgoing>Flow_11xss17</bpmn:outgoing>
       </bpmn:exclusiveGateway>
-      <bpmn:sequenceFlow id="Flow_1326qnf" name="SI" sourceRef="Gateway_1uxjqv9" targetRef="Gateway_00q0i54" />
-      <bpmn:sequenceFlow id="Flow_1h989oq" name="NO" sourceRef="Gateway_1uxjqv9" targetRef="administrar_dopamina" />
+      <bpmn:sequenceFlow id="Flow_1326qnf" name="SI" sourceRef="Gateway_1uxjqv9" targetRef="Gateway_00q0i54">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${apto_noradrenalina}</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
+      <bpmn:sequenceFlow id="Flow_1h989oq" name="NO" sourceRef="Gateway_1uxjqv9" targetRef="administrar_dopamina">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!apto_noradrenalina}</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
       <bpmn:sequenceFlow id="Flow_0s59dcz" sourceRef="administrar_dopamina" targetRef="medir464" />
       <bpmn:sequenceFlow id="Flow_11xss17" sourceRef="Gateway_00q0i54" targetRef="administrar_noradrenalina" />
       <bpmn:sequenceFlow id="Flow_0xub0vj" sourceRef="administrar_noradrenalina" targetRef="Activity_0o27d4p" />
-      <bpmn:exclusiveGateway id="Gateway_0mxh0wa" name="¿Dosis excede 35-90 µgr/min (Altas)?">
+      <bpmn:exclusiveGateway id="Gateway_0mxh0wa" name="¿Dosis excede 40 µgr/min (Altas)?">
         <bpmn:incoming>Flow_1bmwiz8</bpmn:incoming>
         <bpmn:outgoing>Flow_1p0mk2w</bpmn:outgoing>
         <bpmn:outgoing>Flow_1279ver</bpmn:outgoing>
       </bpmn:exclusiveGateway>
       <bpmn:sequenceFlow id="Flow_1bmwiz8" sourceRef="Activity_0o27d4p" targetRef="Gateway_0mxh0wa" />
-      <bpmn:sequenceFlow id="Flow_1p0mk2w" name="NO" sourceRef="Gateway_0mxh0wa" targetRef="aumentar_noradrenalina" />
+      <bpmn:sequenceFlow id="Flow_1p0mk2w" name="NO" sourceRef="Gateway_0mxh0wa" targetRef="aumentar_noradrenalina">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${dosis&lt;40}</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
       <bpmn:sequenceFlow id="Flow_16wnf2x" sourceRef="aumentar_noradrenalina" targetRef="Gateway_00q0i54" />
       <bpmn:exclusiveGateway id="Gateway_1ocacig">
         <bpmn:incoming>Flow_1ucwn61</bpmn:incoming>
@@ -174,7 +180,9 @@
         <bpmn:outgoing>Flow_1fdi2pk</bpmn:outgoing>
       </bpmn:exclusiveGateway>
       <bpmn:sequenceFlow id="Flow_1ucwn61" sourceRef="medir464" targetRef="Gateway_1ocacig" />
-      <bpmn:sequenceFlow id="Flow_1279ver" name="SI" sourceRef="Gateway_0mxh0wa" targetRef="Gateway_1ocacig" />
+      <bpmn:sequenceFlow id="Flow_1279ver" name="SI" sourceRef="Gateway_0mxh0wa" targetRef="Gateway_1ocacig">
+        <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${dosis&gt;=40}</bpmn:conditionExpression>
+      </bpmn:sequenceFlow>
       <bpmn:sequenceFlow id="Flow_1fdi2pk" sourceRef="Gateway_1ocacig" targetRef="administrar_adrenalina" />
       <bpmn:sequenceFlow id="Flow_0plk591" sourceRef="Activity_0wjmqmf" targetRef="administrar_dobutamina" />
       <bpmn:sequenceFlow id="Flow_0ma26ut" sourceRef="administrar_dobutamina" targetRef="Activity_0tx0r9x" />
@@ -190,7 +198,13 @@
         <bpmn:incoming>Flow_11xss17</bpmn:incoming>
         <bpmn:outgoing>Flow_0xub0vj</bpmn:outgoing>
       </bpmn:manualTask>
-      <bpmn:userTask id="Activity_0o27d4p" name="Medir TAM" camunda:formKey="camunda-forms:deployment:form_tam.form" camunda:assignee="enfermero">
+      <bpmn:userTask id="Activity_0o27d4p" name="Medir TAM y dosis noradrenalina" camunda:assignee="enfermero">
+        <bpmn:extensionElements>
+          <camunda:formData>
+            <camunda:formField id="TAM" label="Nivel TAM" type="long" />
+            <camunda:formField id="dosis" label="Dosis administrada noradrenalina" type="long" />
+          </camunda:formData>
+        </bpmn:extensionElements>
         <bpmn:incoming>Flow_0xub0vj</bpmn:incoming>
         <bpmn:outgoing>Flow_1bmwiz8</bpmn:outgoing>
       </bpmn:userTask>
@@ -228,8 +242,12 @@
     </bpmn:boundaryEvent>
     <bpmn:sequenceFlow id="Flow_05z2nuk" sourceRef="StartEvent_1" targetRef="inspeccionar_sintomas" />
     <bpmn:sequenceFlow id="Flow_1gjjwxb" sourceRef="inspeccionar_sintomas" targetRef="Gateway_1j15umq" />
-    <bpmn:sequenceFlow id="Flow_1lf5yxq" name="SI" sourceRef="Gateway_1j15umq" targetRef="quick_sofa" />
-    <bpmn:sequenceFlow id="Flow_1dhwrze" name="NO" sourceRef="Gateway_1j15umq" targetRef="Event_0492vq1" />
+    <bpmn:sequenceFlow id="Flow_1lf5yxq" name="SI" sourceRef="Gateway_1j15umq" targetRef="quick_sofa">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${resultado}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1dhwrze" name="NO" sourceRef="Gateway_1j15umq" targetRef="Event_0492vq1">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!resultado}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0g638ok" sourceRef="quick_sofa" targetRef="Gateway_1jl8pdw" />
     <bpmn:sequenceFlow id="Flow_0z558nn" name="NO" sourceRef="Gateway_1jl8pdw" targetRef="Event_1mmtn40">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!quick_sofa_positivo}</bpmn:conditionExpression>
@@ -287,7 +305,7 @@
     <bpmn:sequenceFlow id="Flow_16jiu30" sourceRef="suministrar_vasopresores" targetRef="comunicar_defucion" />
     <bpmn:sequenceFlow id="Flow_1goggru" sourceRef="Gateway_08iisuj" targetRef="hoja_boxes" />
     <bpmn:sequenceFlow id="Flow_0ojl765" sourceRef="hoja_boxes" targetRef="enviar_historial" />
-    <bpmn:businessRuleTask id="inspeccionar_sintomas" name="Inspeccionar síntomas" camunda:resultVariable="response" camunda:decisionRef="sintomas">
+    <bpmn:businessRuleTask id="inspeccionar_sintomas" name="Inspeccionar síntomas" camunda:resultVariable="resultado" camunda:decisionRef="sintomas" camunda:mapDecisionResult="singleEntry">
       <bpmn:incoming>Flow_05z2nuk</bpmn:incoming>
       <bpmn:outgoing>Flow_1gjjwxb</bpmn:outgoing>
     </bpmn:businessRuleTask>
@@ -393,6 +411,7 @@
         <camunda:formData>
           <camunda:formField id="TAM" label="Nivel TAM" type="long" />
           <camunda:formField id="respuesta_positiva" label="¿Respuesta positiva a los cristaloides?" type="boolean" />
+          <camunda:formField id="apto_noradrenalina" label="¿El paciente es apto para suministrar noradrenalina?" type="boolean" />
         </camunda:formData>
       </bpmn:extensionElements>
       <bpmn:incoming>Flow_1fxyxl7</bpmn:incoming>
@@ -859,7 +878,7 @@
       <bpmndi:BPMNShape id="Gateway_0mxh0wa_di" bpmnElement="Gateway_0mxh0wa" isMarkerVisible="true">
         <dc:Bounds x="2425" y="615" width="50" height="50" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="2485" y="620" width="74" height="40" />
+          <dc:Bounds x="2478" y="620" width="89" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1ocacig_di" bpmnElement="Gateway_1ocacig" isMarkerVisible="true">
