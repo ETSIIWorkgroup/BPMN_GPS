@@ -7,12 +7,12 @@
     <bpmn:laneSet id="LaneSet_1izwoa4">
       <bpmn:lane id="triaje" name="Triaje">
         <bpmn:flowNodeRef>Gateway_1j15umq</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0492vq1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fuera_riesgo_1</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1jl8pdw</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1mmtn40</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fuera_riesgo_2</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0qnw9y6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1xby63t</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>StartEvent_1</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>llegada_paciente</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1ikd0rm</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>inspeccionar_sintomas</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>quick_sofa</bpmn:flowNodeRef>
@@ -21,7 +21,7 @@
       </bpmn:lane>
       <bpmn:lane id="boxes" name="Boxes">
         <bpmn:flowNodeRef>Gateway_0e6lz36</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0n3qwx7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fuera_riesgo_3</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1b8z0u9</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_0lcg0l6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_095kuno</bpmn:flowNodeRef>
@@ -38,7 +38,7 @@
         <bpmn:flowNodeRef>medir_lactato</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>shock_septico</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>comunicar_defucion</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1vpiiu6</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>fuera_riesgo_final</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>suministrar_vasopresores</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0k0ecl8</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>enviar_historial</bpmn:flowNodeRef>
@@ -52,7 +52,7 @@
       <bpmn:outgoing>Flow_1lf5yxq</bpmn:outgoing>
       <bpmn:outgoing>Flow_1dhwrze</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="Event_0492vq1" name="Paciente fuera de riesgo">
+    <bpmn:endEvent id="fuera_riesgo_1" name="Paciente fuera de riesgo">
       <bpmn:incoming>Flow_1dhwrze</bpmn:incoming>
       <bpmn:terminateEventDefinition id="TerminateEventDefinition_1fizyjn" />
     </bpmn:endEvent>
@@ -61,7 +61,7 @@
       <bpmn:outgoing>Flow_0z558nn</bpmn:outgoing>
       <bpmn:outgoing>Flow_0eq3c0k</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="Event_1mmtn40" name="Paciente fuera de riesgo">
+    <bpmn:endEvent id="fuera_riesgo_2" name="Paciente fuera de riesgo">
       <bpmn:incoming>Flow_0z558nn</bpmn:incoming>
       <bpmn:terminateEventDefinition id="TerminateEventDefinition_171y25b" />
     </bpmn:endEvent>
@@ -75,7 +75,7 @@
       <bpmn:incoming>Flow_1hinekk</bpmn:incoming>
       <bpmn:outgoing>Flow_072til0</bpmn:outgoing>
     </bpmn:parallelGateway>
-    <bpmn:startEvent id="StartEvent_1" name="Llegada de paciente">
+    <bpmn:startEvent id="llegada_paciente" name="Llegada de paciente">
       <bpmn:outgoing>Flow_05z2nuk</bpmn:outgoing>
     </bpmn:startEvent>
     <bpmn:exclusiveGateway id="Gateway_0e6lz36" name="¿Índice SOFA &#62;= 2?">
@@ -83,7 +83,7 @@
       <bpmn:outgoing>Flow_1rhhsmk</bpmn:outgoing>
       <bpmn:outgoing>Flow_1aap3nt</bpmn:outgoing>
     </bpmn:exclusiveGateway>
-    <bpmn:endEvent id="Event_0n3qwx7" name="Paciente fuera de riesgo">
+    <bpmn:endEvent id="fuera_riesgo_3" name="Paciente fuera de riesgo">
       <bpmn:incoming>Flow_1rhhsmk</bpmn:incoming>
       <bpmn:terminateEventDefinition id="TerminateEventDefinition_0nwv147" />
     </bpmn:endEvent>
@@ -240,16 +240,16 @@
         <bpmn:condition xsi:type="bpmn:tFormalExpression">${TAM&gt;=65}</bpmn:condition>
       </bpmn:conditionalEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:sequenceFlow id="Flow_05z2nuk" sourceRef="StartEvent_1" targetRef="inspeccionar_sintomas" />
+    <bpmn:sequenceFlow id="Flow_05z2nuk" sourceRef="llegada_paciente" targetRef="inspeccionar_sintomas" />
     <bpmn:sequenceFlow id="Flow_1gjjwxb" sourceRef="inspeccionar_sintomas" targetRef="Gateway_1j15umq" />
     <bpmn:sequenceFlow id="Flow_1lf5yxq" name="SI" sourceRef="Gateway_1j15umq" targetRef="quick_sofa">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${resultado}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
-    <bpmn:sequenceFlow id="Flow_1dhwrze" name="NO" sourceRef="Gateway_1j15umq" targetRef="Event_0492vq1">
+    <bpmn:sequenceFlow id="Flow_1dhwrze" name="NO" sourceRef="Gateway_1j15umq" targetRef="fuera_riesgo_1">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!resultado}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0g638ok" sourceRef="quick_sofa" targetRef="Gateway_1jl8pdw" />
-    <bpmn:sequenceFlow id="Flow_0z558nn" name="NO" sourceRef="Gateway_1jl8pdw" targetRef="Event_1mmtn40">
+    <bpmn:sequenceFlow id="Flow_0z558nn" name="NO" sourceRef="Gateway_1jl8pdw" targetRef="fuera_riesgo_2">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!quick_sofa_positivo}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_0eq3c0k" name="SI" sourceRef="Gateway_1jl8pdw" targetRef="Gateway_0qnw9y6">
@@ -262,7 +262,7 @@
     <bpmn:sequenceFlow id="Flow_072til0" sourceRef="Gateway_1xby63t" targetRef="colocar_vias" />
     <bpmn:sequenceFlow id="Flow_1c2sj2w" sourceRef="colocar_vias" targetRef="realizar_sofa" />
     <bpmn:sequenceFlow id="Flow_1fh340m" sourceRef="realizar_sofa" targetRef="Gateway_0e6lz36" />
-    <bpmn:sequenceFlow id="Flow_1rhhsmk" name="NO" sourceRef="Gateway_0e6lz36" targetRef="Event_0n3qwx7">
+    <bpmn:sequenceFlow id="Flow_1rhhsmk" name="NO" sourceRef="Gateway_0e6lz36" targetRef="fuera_riesgo_3">
       <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!sofa_positivo}</bpmn:conditionExpression>
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_1aap3nt" name="SI" sourceRef="Gateway_0e6lz36" targetRef="Gateway_1b8z0u9">
@@ -384,15 +384,15 @@
       <bpmn:terminateEventDefinition id="TerminateEventDefinition_1ln0s77" />
     </bpmn:endEvent>
     <bpmn:sequenceFlow id="Flow_14vtcn6" sourceRef="comunicar_defucion" targetRef="shock_septico" />
-    <bpmn:sendTask id="comunicar_defucion" name="Comunicar defunción">
+    <bpmn:sendTask id="comunicar_defucion" name="Comunicar defunción" camunda:type="external" camunda:topic="defuncion">
       <bpmn:incoming>Flow_16jiu30</bpmn:incoming>
       <bpmn:outgoing>Flow_14vtcn6</bpmn:outgoing>
     </bpmn:sendTask>
-    <bpmn:endEvent id="Event_1vpiiu6" name="Paciente fuera de riesgo">
+    <bpmn:endEvent id="fuera_riesgo_final" name="Paciente fuera de riesgo">
       <bpmn:incoming>Flow_0a6rxyg</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sequenceFlow id="Flow_0a6rxyg" sourceRef="enviar_historial" targetRef="Event_1vpiiu6" />
-    <bpmn:sendTask id="enviar_historial" name="Enviar historial clínico">
+    <bpmn:sequenceFlow id="Flow_0a6rxyg" sourceRef="enviar_historial" targetRef="fuera_riesgo_final" />
+    <bpmn:sendTask id="enviar_historial" name="Enviar historial clínico" camunda:type="external" camunda:topic="historial">
       <bpmn:incoming>Flow_0ojl765</bpmn:incoming>
       <bpmn:outgoing>Flow_0a6rxyg</bpmn:outgoing>
     </bpmn:sendTask>
@@ -682,7 +682,7 @@
           <dc:Bounds x="397" y="322" width="68" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0h2who4_di" bpmnElement="Event_0492vq1">
+      <bpmndi:BPMNShape id="Event_0h2who4_di" bpmnElement="fuera_riesgo_1">
         <dc:Bounds x="512" y="162" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="487" y="205" width="87" height="27" />
@@ -694,7 +694,7 @@
           <dc:Bounds x="604" y="322" width="72" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1mmtn40_di" bpmnElement="Event_1mmtn40">
+      <bpmndi:BPMNShape id="Event_1mmtn40_di" bpmnElement="fuera_riesgo_2">
         <dc:Bounds x="732" y="162" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="707" y="205" width="87" height="27" />
@@ -706,7 +706,7 @@
       <bpmndi:BPMNShape id="Gateway_0pnr8cz_di" bpmnElement="Gateway_1xby63t">
         <dc:Bounds x="985" y="285" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="llegada_paciente">
         <dc:Bounds x="222" y="272" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="213" y="315" width="55" height="27" />
@@ -718,7 +718,7 @@
           <dc:Bounds x="1268" y="552" width="85" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0m7ieko_di" bpmnElement="Event_0n3qwx7">
+      <bpmndi:BPMNShape id="Event_0m7ieko_di" bpmnElement="fuera_riesgo_3">
         <dc:Bounds x="1332" y="422" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="1307" y="386" width="87" height="27" />
@@ -959,7 +959,7 @@
       <bpmndi:BPMNShape id="Activity_0q18bg9_di" bpmnElement="comunicar_defucion">
         <dc:Bounds x="3230" y="565" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1vpiiu6_di" bpmnElement="Event_1vpiiu6">
+      <bpmndi:BPMNShape id="Event_1vpiiu6_di" bpmnElement="fuera_riesgo_final">
         <dc:Bounds x="3692" y="1052" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="3667" y="1095" width="87" height="27" />
