@@ -1,18 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="Definitions_0m0tmic" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
-  <decision id="sintomas" name="Inspección de Síntomas">
-    <decisionTable id="DecisionTable_1g436wx">
-      <input id="Input_1">
-        <inputExpression id="InputExpression_1" typeRef="string">
-          <text></text>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_01m5rii" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.11.1">
+  <decision id="inspeccionar_sintomas" name="Inspección síntomas">
+    <decisionTable id="DecisionTable_0um3fla">
+      <input id="Input_1" label="Temperatura" camunda:inputVariable="temperatura">
+        <inputExpression id="InputExpression_1" typeRef="long">
+          <text>temperatura</text>
         </inputExpression>
       </input>
-      <output id="Output_1" name="resultado" typeRef="string" />
+      <input id="InputClause_16li71k" label="Presión Arterial" camunda:inputVariable="presion">
+        <inputExpression id="LiteralExpression_0kjy4qg" typeRef="long">
+          <text>presion</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_12ms90w" label="Latidos Cardíacos" camunda:inputVariable="latidos">
+        <inputExpression id="LiteralExpression_0k6mfbv" typeRef="long">
+          <text>latidos</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="Resultado" name="resultado" typeRef="string" />
+      <rule id="DecisionRule_0zvz0o7">
+        <inputEntry id="UnaryTests_1c5cehm">
+          <text>&gt;=37</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11f24nx">
+          <text>&lt;90</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_006zokx">
+          <text>&gt;=120</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1iqoq8e">
+          <text>"Paciente muestra síntomas"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1usf6dg">
+        <inputEntry id="UnaryTests_11meqek">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c7zczo">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1kvprwn">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0206n0k">
+          <text>"Paciente no muestra síntomas"</text>
+        </outputEntry>
+      </rule>
     </decisionTable>
   </decision>
   <dmndi:DMNDI>
     <dmndi:DMNDiagram>
-      <dmndi:DMNShape dmnElementRef="sintomas">
+      <dmndi:DMNShape dmnElementRef="inspeccionar_sintomas">
         <dc:Bounds height="80" width="180" x="160" y="100" />
       </dmndi:DMNShape>
     </dmndi:DMNDiagram>

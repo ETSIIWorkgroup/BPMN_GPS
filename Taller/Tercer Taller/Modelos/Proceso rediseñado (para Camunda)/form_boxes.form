@@ -7,6 +7,69 @@
       "id": "Field_1g44fxr"
     },
     {
+      "label": "Hora de Triaje",
+      "type": "number",
+      "id": "Field_1f7zdxn",
+      "key": "hora_triaje",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Hora de Activación del Código SEPSIS",
+      "type": "number",
+      "id": "Field_1rz3mfu",
+      "key": "hora_activacion",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Hora de atención médica",
+      "type": "number",
+      "id": "Field_0tv9k89",
+      "key": "hora_atencion",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Hora administración antibiótico",
+      "type": "number",
+      "id": "Field_05pq2dz",
+      "key": "hora_administracion_antibiotico",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Hora administración suero",
+      "type": "number",
+      "id": "Field_1s1z8tr",
+      "key": "hora_administacion_suero",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Hora alta urgencias",
+      "type": "number",
+      "id": "Field_1fekapg",
+      "key": "hora_alta",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Antibióticos suministrados",
+      "type": "textfield",
+      "id": "Field_15f1x65",
+      "key": "antbioticos",
+      "validate": {
+        "required": true
+      }
+    },
+    {
       "label": "Observaciones",
       "type": "textfield",
       "id": "Field_1leehe9",
