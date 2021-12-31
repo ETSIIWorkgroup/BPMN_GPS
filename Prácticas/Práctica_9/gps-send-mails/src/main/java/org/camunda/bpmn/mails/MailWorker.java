@@ -27,7 +27,7 @@ public class MailWorker {
 					+ "\n - Item: " + item + "\n - Cantidad: " + amount);
 			
 			try {
-				sendMail.sendMail("alejandrofertry@gmail.com","Alejandro","GPS Item",800);
+				sendMail.sendMail(mail,user,item,amount);
 				LOGGER.info(">> El correo electrónico ha sido enviado...");
 			} catch(Exception e) {
 				LOGGER.info(">> El correo electrónico no ha sido enviado...");

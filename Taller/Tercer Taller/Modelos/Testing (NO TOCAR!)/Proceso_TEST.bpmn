@@ -29,9 +29,9 @@
         <bpmn:flowNodeRef>enviar_historial</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>hoja_boxes</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>medir_tam_cristaloides</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>obtener_parametros</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>suministrar_vasopresores</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0k0ecl8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>obtener_parametros</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="triaje" name="Triaje">
         <bpmn:flowNodeRef>Gateway_1j15umq</bpmn:flowNodeRef>
@@ -232,7 +232,7 @@
         <bpmn:incoming>Flow_0plk591</bpmn:incoming>
         <bpmn:outgoing>Flow_0ma26ut</bpmn:outgoing>
       </bpmn:manualTask>
-      <bpmn:userTask id="medir_tam_3" name="Medir TAM" camunda:formKey="camunda-forms:deployment:form_tam.form">
+      <bpmn:userTask id="medir_tam_3" name="Medir TAM" camunda:formKey="camunda-forms:deployment:form_tam.form" camunda:assignee="enfermero">
         <bpmn:incoming>Flow_0ma26ut</bpmn:incoming>
         <bpmn:outgoing>Flow_13tx5ev</bpmn:outgoing>
       </bpmn:userTask>
@@ -352,10 +352,6 @@
       <bpmn:incoming>Flow_1fxyxl7</bpmn:incoming>
       <bpmn:outgoing>Flow_1j2ygvj</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:manualTask id="obtener_parametros" name="Obtener parámetros analíticos necesarios">
-      <bpmn:incoming>Flow_06aos04</bpmn:incoming>
-      <bpmn:outgoing>Flow_0hdeqf7</bpmn:outgoing>
-    </bpmn:manualTask>
     <bpmn:boundaryEvent id="Event_0k0ecl8" name="¿TAM &#62;= 65?" attachedToRef="suministrar_vasopresores">
       <bpmn:outgoing>Flow_0a8bbo0</bpmn:outgoing>
       <bpmn:conditionalEventDefinition id="ConditionalEventDefinition_1odm25q">
@@ -429,6 +425,16 @@
     </bpmn:sequenceFlow>
     <bpmn:sequenceFlow id="Flow_05z2nuk" sourceRef="llegada_paciente" targetRef="recoger_sintomas" />
     <bpmn:sequenceFlow id="Flow_0gypze7" sourceRef="recoger_sintomas" targetRef="Gateway_1j15umq" />
+    <bpmn:userTask id="obtener_parametros" name="Obtener parámetros analíticos necesarios" camunda:assignee="enfermero">
+      <bpmn:extensionElements>
+        <camunda:formData>
+          <camunda:formField id="niveles_lactato" label="Niveles de lactato" type="long" />
+          <camunda:formField id="niveles_correctos" label="¿Niveles lactato normales?" type="boolean" />
+        </camunda:formData>
+      </bpmn:extensionElements>
+      <bpmn:incoming>Flow_06aos04</bpmn:incoming>
+      <bpmn:outgoing>Flow_0hdeqf7</bpmn:outgoing>
+    </bpmn:userTask>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="proceso">
@@ -441,6 +447,10 @@
       <bpmndi:BPMNShape id="Lane_0bmv0bc_di" bpmnElement="boxes" isHorizontal="true">
         <dc:Bounds x="190" y="410" width="3690" height="820" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0gypze7_di" bpmnElement="Flow_0gypze7">
+        <di:waypoint x="380" y="290" />
+        <di:waypoint x="525" y="290" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_05z2nuk_di" bpmnElement="Flow_05z2nuk">
         <di:waypoint x="248" y="290" />
         <di:waypoint x="280" y="290" />
@@ -675,10 +685,6 @@
       <bpmndi:BPMNEdge id="Flow_0a6rxyg_di" bpmnElement="Flow_0a6rxyg">
         <di:waypoint x="3740" y="1070" />
         <di:waypoint x="3812" y="1070" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0gypze7_di" bpmnElement="Flow_0gypze7">
-        <di:waypoint x="380" y="290" />
-        <di:waypoint x="525" y="290" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Gateway_1j15umq_di" bpmnElement="Gateway_1j15umq" isMarkerVisible="true">
         <dc:Bounds x="525" y="265" width="50" height="50" />
@@ -978,7 +984,7 @@
       <bpmndi:BPMNShape id="Activity_1854kic_di" bpmnElement="medir_tam_cristaloides">
         <dc:Bounds x="1810" y="420" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1rkw6vj_di" bpmnElement="obtener_parametros">
+      <bpmndi:BPMNShape id="Activity_00ik76c_di" bpmnElement="obtener_parametros">
         <dc:Bounds x="1690" y="1030" width="100" height="80" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_0zax8kx_di" bpmnElement="Event_0k0ecl8">
