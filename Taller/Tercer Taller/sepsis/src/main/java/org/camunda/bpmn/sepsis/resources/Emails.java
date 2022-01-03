@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
+import org.camunda.bpmn.sepsis.main.GenerarPdfTriaje;
 
 /*
  * Clase Emails que gestiona el envío de los mensajes.
@@ -71,6 +72,9 @@ public class Emails {
 		
 		if (email != null && !email.isEmpty()) {
 			
+			System.out.println("El nombre es: " + nombre);
+			System.out.println("El email es: " + email);
+
 			// Nuevo objeto de tipo 'Email' para el envío del correo:
 			Email mail = new SimpleEmail();
 			mail.setStartTLSEnabled(true);

@@ -15,16 +15,16 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class GenerarPdfTriaje {
 
-	public static String nombre = "";
-	public static String apellidos = "";
-	public static String edad = "";
-	public static String fechaDeNacimiento = "";
-	public static String dni = "";
-	public static String seguridadSocial = "";
-	public static String sexo = "";
-	public static String comunidadAutonoma = "";
-	public static String pais = "";
-	public static String direccion = "";
+	public static String nombre = "Alejandro";
+	public static String apellidos = "Fernandez";
+	public static String edad = "24";
+	public static String fechaDeNacimiento = "13-10";
+	public static String dni = "12324235";
+	public static String seguridadSocial = "1232132";
+	public static String sexo = "V";
+	public static String comunidadAutonoma = "Sevilla";
+	public static String pais = "España";
+	public static String direccion = "Calle Falsa 123";
 
 	public static void generarHojaDatosTriaje() {
 		try {

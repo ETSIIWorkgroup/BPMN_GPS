@@ -67,9 +67,13 @@ public class Datos {
 			String email = (String) externalTask.getVariable("email");
 			String nombre = (String) externalTask.getVariable("nombre");
 
-			GenerarPdfTriaje.nombre = nombre;
-			GenerarPdfTriaje.apellidos = email;
-			GenerarPdfTriaje.generarHojaDatosTriaje();
+			try {
+				//GenerarPdfTriaje.nombre = nombre;
+				//GenerarPdfTriaje.apellidos = email;
+				GenerarPdfTriaje.generarHojaDatosTriaje();
+			} catch (Exception e) {
+				LOGGER.info("El pdf ha fallado");
+			}
 
 			LOGGER.info("CONTENIDO DEL MENSAJE A ENVIAR:");
 
