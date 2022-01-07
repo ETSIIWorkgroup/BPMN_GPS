@@ -31,11 +31,11 @@ public class GenerarPdfBoxes {
 			PdfWriter.getInstance(document, new FileOutputStream("boxes.pdf"));
 			document.open();
 			PdfPTable table = new PdfPTable(3);
-			Path path = Paths.get(ClassLoader.getSystemResource("hosp_britanico_logo.svg").toURI());
-			Image img = Image.getInstance(path.toAbsolutePath().toString());
-			img.scalePercent(10);
-			PdfPCell imageCell = new PdfPCell(img);
-			table.addCell(imageCell);
+			//Path path = Paths.get(ClassLoader.getSystemResource("resources/hospital_logo.svg").toURI());
+			//Image img = Image.getInstance(path.toAbsolutePath().toString());
+			//img.scalePercent(10);
+			//PdfPCell imageCell = new PdfPCell(img);
+			//table.addCell(imageCell);
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			addFirstTableHeaderBoxes(table);

@@ -35,6 +35,15 @@
       }
     },
     {
+      "label": "Email",
+      "type": "textfield",
+      "id": "Field_13qo6aw",
+      "key": "email",
+      "validate": {
+        "required": true
+      }
+    },
+    {
       "text": "-------------------------------------------------------------------------------------",
       "type": "text",
       "id": "Field_05frzdv"

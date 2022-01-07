@@ -64,16 +64,13 @@ public class Datos {
 
 		cliente.subscribe("alta").lockDuration(1000).handler((externalTask, externalTaskService) -> {
 
-			String email = (String) externalTask.getVariable("email");
+			//String email = (String) externalTask.getVariable("email");
+			String email = "alejandrofertry@gmail.com";
 			String nombre = (String) externalTask.getVariable("nombre");
 
-			try {
-				//GenerarPdfTriaje.nombre = nombre;
-				//GenerarPdfTriaje.apellidos = email;
-				GenerarPdfTriaje.generarHojaDatosTriaje();
-			} catch (Exception e) {
-				LOGGER.info("El pdf ha fallado");
-			}
+			GenerarPdfTriaje.nombre = nombre;
+			GenerarPdfTriaje.apellidos = email;
+			GenerarPdfTriaje.generarHojaDatosTriaje();
 
 			LOGGER.info("CONTENIDO DEL MENSAJE A ENVIAR:");
 

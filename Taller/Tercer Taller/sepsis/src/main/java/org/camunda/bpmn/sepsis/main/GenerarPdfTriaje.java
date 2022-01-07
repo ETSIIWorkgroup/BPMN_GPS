@@ -27,16 +27,17 @@ public class GenerarPdfTriaje {
 	public static String direccion = "Calle Falsa 123";
 
 	public static void generarHojaDatosTriaje() {
+		System.out.println("Hemos accedido a la clase GenerarHojaDatosTriaje");
 		try {
 			Document document = new Document();
 			PdfWriter.getInstance(document, new FileOutputStream("triaje.pdf"));
 			document.open();
 			PdfPTable table = new PdfPTable(3);
-			Path path = Paths.get(ClassLoader.getSystemResource("hosp_britanico_logo.svg").toURI());
-			Image img = Image.getInstance(path.toAbsolutePath().toString());
-			img.scalePercent(10);
-			PdfPCell imageCell = new PdfPCell(img);
-			table.addCell(imageCell);
+			//Path path = Paths.get(ClassLoader.getSystemResource("C:/Users/aleja/Documents/Otros Repositorios/BPMN_GPS/Taller/Tercer Taller/sepsis/resources/hospital_logo.svg").toURI());
+			//Image img = Image.getInstance(path.toAbsolutePath().toString());
+			//img.scalePercent(10);
+			//PdfPCell imageCell = new PdfPCell(img);
+			//table.addCell(imageCell);
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			addFirstTableHeaderTriaje(table);

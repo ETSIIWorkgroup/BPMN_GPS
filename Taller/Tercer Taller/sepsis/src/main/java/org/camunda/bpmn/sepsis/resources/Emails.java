@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.SimpleEmail;
-import org.camunda.bpmn.sepsis.main.GenerarPdfTriaje;
 
 /*
  * Clase Emails que gestiona el envío de los mensajes.

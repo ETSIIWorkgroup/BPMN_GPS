@@ -327,7 +327,7 @@
     <bpmn:endEvent id="fuera_riesgo_final" name="Paciente fuera de riesgo">
       <bpmn:incoming>Flow_0a6rxyg</bpmn:incoming>
     </bpmn:endEvent>
-    <bpmn:sendTask id="enviar_historial" name="Enviar historial clínico" camunda:type="external" camunda:topic="historial">
+    <bpmn:sendTask id="enviar_historial" name="Enviar historial clínico" camunda:type="external" camunda:topic="alta">
       <bpmn:incoming>Flow_0ojl765</bpmn:incoming>
       <bpmn:outgoing>Flow_0a6rxyg</bpmn:outgoing>
     </bpmn:sendTask>
