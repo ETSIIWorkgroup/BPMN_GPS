@@ -1,20 +1,27 @@
-package org.camunda.bpmn.sepsis.main;
+package org.camunda.bpmn.sepsis.documentos;
 
 import java.io.FileOutputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.stream.Stream;
-
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-public class GenerarPdfBoxes {
+/*
+ * Clase que genere PDFs correspondientes al área de Boxes cuando se genera un alta de paciente. 
+ * 
+ * Taller III - Tema: SEPSIS - Grupo 5 
+ * Integrantes:
+ *  - Pedro Escobar Rubio
+ *  - Alejandro Fernández Trigo
+ *  - Juan Diego Villalobos Quirós
+ */
 
+public class GenerarPdfAlta {
+
+	public static String nombre = "";
 	public static String horaTriaje = null;
 	public static String horaActivacionCodigoSEPSIS = null;
 	public static String horaAtencionMedica = null;
@@ -25,17 +32,16 @@ public class GenerarPdfBoxes {
 	public static String observaciones = null;
 	public static String firma = null;
 
-	public static void generarHojaDatosBoxes() {
+	public static void generarHojaDatosAlta() {
+		
+		System.out.println("Se ha generado el documento respectivo al alta del paciente " + nombre + ".");
+		
 		try {
+			
 			Document document = new Document();
-			PdfWriter.getInstance(document, new FileOutputStream("boxes.pdf"));
+			PdfWriter.getInstance(document, new FileOutputStream("BBDD/Documento de Alta - " + nombre + ".pdf"));
 			document.open();
 			PdfPTable table = new PdfPTable(3);
-			//Path path = Paths.get(ClassLoader.getSystemResource("resources/hospital_logo.svg").toURI());
-			//Image img = Image.getInstance(path.toAbsolutePath().toString());
-			//img.scalePercent(10);
-			//PdfPCell imageCell = new PdfPCell(img);
-			//table.addCell(imageCell);
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			addFirstTableHeaderBoxes(table);
@@ -55,8 +61,11 @@ public class GenerarPdfBoxes {
 			table.addCell(new PdfPCell());
 			document.add(table);
 			document.close();
+			
 		} catch (Exception e) {
+			
 			e.printStackTrace();
+			
 		}
 	}
 
@@ -109,4 +118,5 @@ public class GenerarPdfBoxes {
 		table.addCell(observaciones);
 		table.addCell(firma);
 	}
+	
 }

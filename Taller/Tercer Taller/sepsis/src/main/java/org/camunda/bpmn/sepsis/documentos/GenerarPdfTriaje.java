@@ -1,43 +1,46 @@
-package org.camunda.bpmn.sepsis.main;
+package org.camunda.bpmn.sepsis.documentos;
 
 import java.io.FileOutputStream;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.stream.Stream;
-
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Document;
-import com.itextpdf.text.Image;
 import com.itextpdf.text.Phrase;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
+/*
+ * Clase que genere PDFs correspondientes al área de Triaje. 
+ * 
+ * Taller III - Tema: SEPSIS - Grupo 5 
+ * Integrantes:
+ *  - Pedro Escobar Rubio
+ *  - Alejandro Fernández Trigo
+ *  - Juan Diego Villalobos Quirós
+ */
+
 public class GenerarPdfTriaje {
 
-	public static String nombre = "Alejandro";
-	public static String apellidos = "Fernandez";
-	public static String edad = "24";
-	public static String fechaDeNacimiento = "13-10";
-	public static String dni = "12324235";
-	public static String seguridadSocial = "1232132";
-	public static String sexo = "V";
-	public static String comunidadAutonoma = "Sevilla";
-	public static String pais = "España";
-	public static String direccion = "Calle Falsa 123";
+	public static String nombre = "";
+	public static String apellidos = "";
+	public static String edad = "";
+	public static String fechaDeNacimiento = "";
+	public static String seguridadSocial = "";
+	public static String sexo = "";
+	public static String comunidadAutonoma = "";
+	public static String pais = "";
+	public static String direccion = "";
 
 	public static void generarHojaDatosTriaje() {
-		System.out.println("Hemos accedido a la clase GenerarHojaDatosTriaje");
+		
+		System.out.println("Se ha generado el documento respectivo al triaje para el paciente " + nombre + ".");
+		
 		try {
+			
 			Document document = new Document();
-			PdfWriter.getInstance(document, new FileOutputStream("triaje.pdf"));
+			PdfWriter.getInstance(document, new FileOutputStream("BBDD/" + nombre + "-Triaje.pdf"));
 			document.open();
 			PdfPTable table = new PdfPTable(3);
-			//Path path = Paths.get(ClassLoader.getSystemResource("C:/Users/aleja/Documents/Otros Repositorios/BPMN_GPS/Taller/Tercer Taller/sepsis/resources/hospital_logo.svg").toURI());
-			//Image img = Image.getInstance(path.toAbsolutePath().toString());
-			//img.scalePercent(10);
-			//PdfPCell imageCell = new PdfPCell(img);
-			//table.addCell(imageCell);
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			addFirstTableHeaderTriaje(table);
@@ -46,7 +49,6 @@ public class GenerarPdfTriaje {
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			addSecondTableHeaderTriaje(table);
-			addSecondRowsTriaje(table);
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
@@ -61,8 +63,11 @@ public class GenerarPdfTriaje {
 			table.addCell(new PdfPCell());
 			document.add(table);
 			document.close();
+			
 		} catch (Exception e) {
+			
 			e.printStackTrace();
+			
 		}
 	}
 
@@ -83,19 +88,13 @@ public class GenerarPdfTriaje {
 	}
 
 	private static void addSecondTableHeaderTriaje(PdfPTable table) {
-		Stream.of("Fecha de nacimiento", "DNI", "Nº de Seguridad Social").forEach(columnTitle -> {
+		Stream.of("Fecha de nacimiento", "Nº de Seguridad Social").forEach(columnTitle -> {
 			PdfPCell header = new PdfPCell();
 			header.setBackgroundColor(BaseColor.LIGHT_GRAY);
 			header.setBorderWidth(2);
 			header.setPhrase(new Phrase(columnTitle));
 			table.addCell(header);
 		});
-	}
-
-	private static void addSecondRowsTriaje(PdfPTable table) {
-		table.addCell(fechaDeNacimiento);
-		table.addCell(dni);
-		table.addCell(seguridadSocial);
 	}
 
 	private static void addThirdTableHeaderTriaje(PdfPTable table) {
@@ -127,4 +126,5 @@ public class GenerarPdfTriaje {
 	private static void addFourthRowsTriaje(PdfPTable table) {
 		table.addCell(direccion);
 	}
+	
 }
