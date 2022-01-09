@@ -44,8 +44,13 @@ public class Datos {
 		// ################################################################################################################
 		cliente.subscribe("defuncion").lockDuration(1000).handler((externalTask, externalTaskService) -> {
 
-			String emailDirectorCentro = "emaildeldirectordelcentro@hospital.com";
-			String nombreDirectorCentro = "Javier Ochoa Gómez - Director del Centro";
+			/*
+			 * Basándonos en el documento provisto por la asignatura, hemos simulado el envío
+			 * de las comunicaciones de defunción de pacientes al director del centro, aunque 
+			 * para ello estamos usando un email de alumno.
+			 */
+			String emailDirectorCentro = "alefertri1@alum.us.es";
+			String nombreDirectorCentro = "Javier Ochoa Gómez [Director del Centro]";
 			
 			// Genera el documento relativo a los datos del paciente, capturados en el Triaje:
 			GenerarPdfTriaje.nombre = (String) externalTask.getVariable("nombre");
@@ -81,6 +86,10 @@ public class Datos {
 
 			String email = (String) externalTask.getVariable("email");
 			String nombre = (String) externalTask.getVariable("nombre");
+			String horaActivacionCodigoSEPSIS = (String) externalTask.getVariable("hora_activacion");
+			String horaAltaUrgencias = (String) externalTask.getVariable("hora_alta");
+			String observaciones = (String) externalTask.getVariable("observaciones");
+			String firma = (String) externalTask.getVariable("firma");
 
 			// Genera el documento relativo a los datos del paciente, capturados en el Triaje:
 			GenerarPdfTriaje.nombre = nombre;
@@ -98,21 +107,21 @@ public class Datos {
 			// Genera el documento relativo al tratamiento aplicado al paciente, capturado al final del proceso, antes del alta:
 			GenerarPdfAlta.nombre = nombre;
 			GenerarPdfAlta.horaTriaje = (String) externalTask.getVariable("hora_triaje");
-			GenerarPdfAlta.horaActivacionCodigoSEPSIS = (String) externalTask.getVariable("hora_activacion");
+			GenerarPdfAlta.horaActivacionCodigoSEPSIS = horaActivacionCodigoSEPSIS;
 			GenerarPdfAlta.horaAtencionMedica = (String) externalTask.getVariable("hora_atencion");
 			GenerarPdfAlta.horaAdministracionAntibiotico = (String) externalTask.getVariable("hora_antibioticos");
 			GenerarPdfAlta.horaAdministracionSuero = (String) externalTask.getVariable("hora_suero");
-			GenerarPdfAlta.horaAltaUrgencias = (String) externalTask.getVariable("hora_alta");
+			GenerarPdfAlta.horaAltaUrgencias = horaAltaUrgencias;
 			GenerarPdfAlta.antibioticosSuministrados = (String) externalTask.getVariable("antibioticos");
-			GenerarPdfAlta.observaciones = (String) externalTask.getVariable("observaciones");
-			GenerarPdfAlta.firma = (String) externalTask.getVariable("firma");
+			GenerarPdfAlta.observaciones = observaciones;
+			GenerarPdfAlta.firma = firma;
 			GenerarPdfAlta.generarHojaDatosAlta();
 			
 			LOGGER.info("Se va a proceder a enviar el email respectivo al alta del paciente " + nombre + ".");
 
 			try {
 
-				Correo.enviaEmailAlta(email, nombre);
+				Correo.enviaEmailAlta(email, nombre, horaActivacionCodigoSEPSIS, horaAltaUrgencias, observaciones, firma);
 				LOGGER.info(">> El correo electrónico ha sido enviado...");
 
 			} catch (Exception e) {

@@ -22,15 +22,15 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class GenerarPdfAlta {
 
 	public static String nombre = "";
-	public static String horaTriaje = null;
-	public static String horaActivacionCodigoSEPSIS = null;
-	public static String horaAtencionMedica = null;
-	public static String horaAdministracionAntibiotico = null;
-	public static String horaAdministracionSuero = null;
-	public static String horaAltaUrgencias = null;
-	public static String antibioticosSuministrados = null;
-	public static String observaciones = null;
-	public static String firma = null;
+	public static String horaTriaje = "";
+	public static String horaActivacionCodigoSEPSIS = "";
+	public static String horaAtencionMedica = "";
+	public static String horaAdministracionAntibiotico = "";
+	public static String horaAdministracionSuero = "";
+	public static String horaAltaUrgencias = "";
+	public static String antibioticosSuministrados = "";
+	public static String observaciones = "";
+	public static String firma = "";
 
 	public static void generarHojaDatosAlta() {
 		

@@ -1,5 +1,6 @@
 package org.camunda.bpmn.sepsis.resources;
 
+import java.time.LocalDate;
 import java.util.logging.Logger;
 
 import org.apache.commons.mail.DefaultAuthenticator;
@@ -52,7 +53,7 @@ public class Emails {
 				
 				mail.setFrom(USER, "[Hospital]");
 				mail.setSubject("Defunción Paciente");
-				mail.setMsg("Estimado/a...");
+				mail.setMsg("A la atención del director del centro; se ha comunicado la defunción de un paciente a fecha de " + LocalDate.now().toString());
 				mail.addTo(email, nombre);
 				mail.send();
 				
@@ -67,12 +68,12 @@ public class Emails {
 	
 	// ################################################################################################################
 	
-	public void enviaEmailAlta(String email, String nombre) {
+	public void enviaEmailAlta(String email, String nombre, String horaActivacionCodigoSEPSIS, String horaAltaUrgencias, String observaciones, String firma) {
 		
 		if (email != null && !email.isEmpty()) {
 			
-			System.out.println("El nombre es: " + nombre);
-			System.out.println("El email es: " + email);
+			System.out.println("Nombre del paciente: " + nombre);
+			System.out.println("Email del paciente: " + email);
 
 			// Nuevo objeto de tipo 'Email' para el envío del correo:
 			Email mail = new SimpleEmail();
@@ -87,7 +88,13 @@ public class Emails {
 				
 				mail.setFrom(USER, "[Hospital]");
 				mail.setSubject("Alta Paciente");
-				mail.setMsg("Estimado/a...");
+				mail.setMsg("Estimado/a " + nombre + " se procede a remitirle los datos de su estancia en nuestras áreas hospitalarias."
+						+ "\n" + "Hora ingreso: " + horaActivacionCodigoSEPSIS
+						+ "\n" + "Hora alta: " + horaAltaUrgencias
+						+ " del " + LocalDate.now().toString()
+						+ "\n\n" + "Observaciones: " + observaciones
+						+ "\n" + "Firmado: " + firma
+						);
 				mail.addTo(email, nombre);
 				mail.send();
 				
