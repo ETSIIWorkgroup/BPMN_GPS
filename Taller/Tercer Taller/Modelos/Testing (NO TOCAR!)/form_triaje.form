@@ -35,9 +35,20 @@
       }
     },
     {
+      "label": "DNI",
+      "type": "textfield",
+      "id": "Field_1lm755v",
+      "key": "dni",
+      "validate": {
+        "required": true,
+        "minLength": 9,
+        "maxLength": 9
+      }
+    },
+    {
       "label": "Email",
       "type": "textfield",
-      "id": "Field_12vg68j",
+      "id": "Field_13qo6aw",
       "key": "email",
       "validate": {
         "required": true
@@ -96,13 +107,19 @@
       "label": "Dirección",
       "type": "textfield",
       "id": "Field_0q7xtg8",
-      "key": "direccion"
+      "key": "direccion",
+      "validate": {
+        "required": true
+      }
     },
     {
       "label": "Comunidad autónoma",
       "type": "textfield",
       "id": "Field_1jvss1w",
-      "key": "comunidad_autonoma"
+      "key": "comunidad_autonoma",
+      "validate": {
+        "required": true
+      }
     },
     {
       "label": "Nacionalidad",

@@ -26,6 +26,7 @@ public class GenerarPdfTriaje {
 	public static String edad = "";
 	public static String fechaDeNacimiento = "";
 	public static String seguridadSocial = "";
+	public static String dni = "";
 	public static String sexo = "";
 	public static String comunidadAutonoma = "";
 	public static String pais = "";
@@ -88,7 +89,7 @@ public class GenerarPdfTriaje {
 	}
 
 	private static void addSecondTableHeaderTriaje(PdfPTable table) {
-		Stream.of("Fecha de nacimiento", "Nº de Seguridad Social").forEach(columnTitle -> {
+		Stream.of("Fecha de nacimiento", "DNI", "Nº de Seguridad Social").forEach(columnTitle -> {
 			PdfPCell header = new PdfPCell();
 			header.setBackgroundColor(BaseColor.LIGHT_GRAY);
 			header.setBorderWidth(2);

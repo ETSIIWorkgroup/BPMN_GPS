@@ -44,18 +44,19 @@ public class Datos {
 		// ################################################################################################################
 		cliente.subscribe("defuncion").lockDuration(1000).handler((externalTask, externalTaskService) -> {
 
-			String email = "emaildeldirectordelcentro@hospital.com";
-			String nombre = "Javier Ochoa Gómez - Director del Centro";
+			String emailDirectorCentro = "emaildeldirectordelcentro@hospital.com";
+			String nombreDirectorCentro = "Javier Ochoa Gómez - Director del Centro";
 			
 			// Genera el documento relativo a los datos del paciente, capturados en el Triaje:
-			GenerarPdfTriaje.nombre = nombre;
+			GenerarPdfTriaje.nombre = (String) externalTask.getVariable("nombre");
 			GenerarPdfTriaje.apellidos = (String) externalTask.getVariable("apellidos");
-			GenerarPdfTriaje.edad = (String) externalTask.getVariable("edad");
-			GenerarPdfTriaje.fechaDeNacimiento = (String) externalTask.getVariable("fecha");
-			GenerarPdfTriaje.seguridadSocial = (String) externalTask.getVariable("social");
+			GenerarPdfTriaje.edad = externalTask.getVariable("edad").toString();
+			GenerarPdfTriaje.fechaDeNacimiento = (String) externalTask.getVariable("fecha_nacimiento");
+			GenerarPdfTriaje.seguridadSocial = (String) externalTask.getVariable("seguridad_social");
+			GenerarPdfTriaje.dni = (String) externalTask.getVariable("dni");
 			GenerarPdfTriaje.sexo = (String) externalTask.getVariable("sexo");
-			GenerarPdfTriaje.comunidadAutonoma = (String) externalTask.getVariable("comunidad");
-			GenerarPdfTriaje.pais = (String) externalTask.getVariable("pais");
+			GenerarPdfTriaje.comunidadAutonoma = (String) externalTask.getVariable("comunidad_autonoma");
+			GenerarPdfTriaje.pais = (String) externalTask.getVariable("nacionalidad");
 			GenerarPdfTriaje.direccion = (String) externalTask.getVariable("direccion");
 			GenerarPdfTriaje.generarHojaDatosTriaje();
 
@@ -63,7 +64,7 @@ public class Datos {
 
 			try {
 
-				Correo.enviaEmailDefuncion(email, nombre);
+				Correo.enviaEmailDefuncion(emailDirectorCentro, nombreDirectorCentro);
 				LOGGER.info(">> El correo electrónico ha sido enviado...");
 
 			} catch (Exception e) {
@@ -84,23 +85,24 @@ public class Datos {
 			// Genera el documento relativo a los datos del paciente, capturados en el Triaje:
 			GenerarPdfTriaje.nombre = nombre;
 			GenerarPdfTriaje.apellidos = (String) externalTask.getVariable("apellidos");
-			GenerarPdfTriaje.edad = (String) externalTask.getVariable("edad");
-			GenerarPdfTriaje.fechaDeNacimiento = (String) externalTask.getVariable("fecha");
-			GenerarPdfTriaje.seguridadSocial = (String) externalTask.getVariable("social");
+			GenerarPdfTriaje.edad = externalTask.getVariable("edad").toString();
+			GenerarPdfTriaje.fechaDeNacimiento = (String) externalTask.getVariable("fecha_nacimiento");
+			GenerarPdfTriaje.seguridadSocial = (String) externalTask.getVariable("seguridad_social");
+			GenerarPdfTriaje.dni = (String) externalTask.getVariable("dni");
 			GenerarPdfTriaje.sexo = (String) externalTask.getVariable("sexo");
-			GenerarPdfTriaje.comunidadAutonoma = (String) externalTask.getVariable("comunidad");
-			GenerarPdfTriaje.pais = (String) externalTask.getVariable("pais");
+			GenerarPdfTriaje.comunidadAutonoma = (String) externalTask.getVariable("comunidad_autonoma");
+			GenerarPdfTriaje.pais = (String) externalTask.getVariable("nacionalidad");
 			GenerarPdfTriaje.direccion = (String) externalTask.getVariable("direccion");
 			GenerarPdfTriaje.generarHojaDatosTriaje();
 			
 			// Genera el documento relativo al tratamiento aplicado al paciente, capturado al final del proceso, antes del alta:
 			GenerarPdfAlta.nombre = nombre;
-			GenerarPdfAlta.horaTriaje = (String) externalTask.getVariable("horatriaje");
-			GenerarPdfAlta.horaActivacionCodigoSEPSIS = (String) externalTask.getVariable("horaactivacion");
-			GenerarPdfAlta.horaAtencionMedica = (String) externalTask.getVariable("horaatencion");
-			GenerarPdfAlta.horaAdministracionAntibiotico = (String) externalTask.getVariable("horaantibioticos");
-			GenerarPdfAlta.horaAdministracionSuero = (String) externalTask.getVariable("horasuero");
-			GenerarPdfAlta.horaAltaUrgencias = (String) externalTask.getVariable("horaalta");
+			GenerarPdfAlta.horaTriaje = (String) externalTask.getVariable("hora_triaje");
+			GenerarPdfAlta.horaActivacionCodigoSEPSIS = (String) externalTask.getVariable("hora_activacion");
+			GenerarPdfAlta.horaAtencionMedica = (String) externalTask.getVariable("hora_atencion");
+			GenerarPdfAlta.horaAdministracionAntibiotico = (String) externalTask.getVariable("hora_antibioticos");
+			GenerarPdfAlta.horaAdministracionSuero = (String) externalTask.getVariable("hora_suero");
+			GenerarPdfAlta.horaAltaUrgencias = (String) externalTask.getVariable("hora_alta");
 			GenerarPdfAlta.antibioticosSuministrados = (String) externalTask.getVariable("antibioticos");
 			GenerarPdfAlta.observaciones = (String) externalTask.getVariable("observaciones");
 			GenerarPdfAlta.firma = (String) externalTask.getVariable("firma");
