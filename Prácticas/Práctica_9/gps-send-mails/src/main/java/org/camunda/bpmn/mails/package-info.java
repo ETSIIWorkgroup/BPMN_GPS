@@ -1,1 +1,0 @@
-package org.camunda.bpmn.mails;
