@@ -8,7 +8,7 @@ public class MailWorker {
 	
 	public static void main(String[] args) {
 		ExternalTaskClient client = ExternalTaskClient.create()
-				.baseUrl("http://localhost:8090/engine-rest")
+				.baseUrl("http://localhost:8080/engine-rest")
 				.build();
 		
 		SendMail sendMail = new SendMail();
