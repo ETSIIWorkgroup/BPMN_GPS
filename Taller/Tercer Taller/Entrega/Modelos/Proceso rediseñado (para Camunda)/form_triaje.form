@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "text": "# Hoja de recogida de datos de carácter general del paciente - Ingresos",
+      "type": "text",
+      "id": "Field_0lk9mgx"
+    },
+    {
+      "label": "Nombre",
+      "type": "textfield",
+      "id": "Field_1qjimkj",
+      "key": "nombre",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Apellidos",
+      "type": "textfield",
+      "id": "Field_0w5w44t",
+      "key": "apellidos",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Nº seguridad social",
+      "type": "textfield",
+      "id": "Field_09c3p56",
+      "key": "seguridad_social",
+      "description": "Nº seguridad social - Aseguradora",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "DNI",
+      "type": "textfield",
+      "id": "Field_0z1uq5m",
+      "key": "dni",
+      "validate": {
+        "required": true,
+        "minLength": 9,
+        "maxLength": 9
+      }
+    },
+    {
+      "label": "Email",
+      "type": "textfield",
+      "id": "Field_13qo6aw",
+      "key": "email",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "text": "-------------------------------------------------------------------------------------",
+      "type": "text",
+      "id": "Field_05frzdv"
+    },
+    {
+      "label": "Edad",
+      "type": "number",
+      "id": "Field_0rt2bl2",
+      "key": "edad",
+      "validate": {
+        "required": true,
+        "min": 1,
+        "max": 99
+      }
+    },
+    {
+      "values": [
+        {
+          "label": "Masculino",
+          "value": "masculino"
+        },
+        {
+          "label": "Femenino",
+          "value": "femenino"
+        }
+      ],
+      "label": "Sexo",
+      "type": "radio",
+      "id": "Field_1a5si8b",
+      "key": "sexo",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Fecha nacimiento",
+      "type": "textfield",
+      "id": "Field_1d2i8cm",
+      "key": "fecha_nacimiento",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "text": "-------------------------------------------------------------------------------------",
+      "type": "text",
+      "id": "Field_07h7cgt"
+    },
+    {
+      "label": "Dirección",
+      "type": "textfield",
+      "id": "Field_0q7xtg8",
+      "key": "direccion",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Comunidad autónoma",
+      "type": "textfield",
+      "id": "Field_1jvss1w",
+      "key": "comunidad_autonoma",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Nacionalidad",
+      "type": "textfield",
+      "id": "Field_0k08hdl",
+      "key": "nacionalidad",
+      "validate": {
+        "required": true
+      }
+    }
+  ],
+  "type": "default",
+  "id": "form_triaje"
+}

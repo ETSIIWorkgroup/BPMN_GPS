@@ -50,6 +50,7 @@ public class GenerarPdfTriaje {
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			addSecondTableHeaderTriaje(table);
+			addSecondRowsTriaje(table);
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
 			table.addCell(new PdfPCell());
@@ -96,6 +97,12 @@ public class GenerarPdfTriaje {
 			header.setPhrase(new Phrase(columnTitle));
 			table.addCell(header);
 		});
+	}
+	
+	private static void addSecondRowsTriaje(PdfPTable table) {
+		table.addCell(fechaDeNacimiento);
+		table.addCell(dni);
+		table.addCell(seguridadSocial);
 	}
 
 	private static void addThirdTableHeaderTriaje(PdfPTable table) {

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 2,
+  "components": [
+    {
+      "text": "# Detalles del alta de paciente ",
+      "type": "text",
+      "id": "Field_1g44fxr"
+    },
+    {
+      "label": "Hora de Triaje",
+      "type": "textfield",
+      "id": "Field_1781210",
+      "key": "hora_triaje",
+      "validate": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 5
+      }
+    },
+    {
+      "label": "Hora de Activación del Código SEPSIS",
+      "type": "textfield",
+      "id": "Field_1155rt9",
+      "key": "hora_activacion",
+      "validate": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 5
+      }
+    },
+    {
+      "label": "Hora de Atención Médica",
+      "type": "textfield",
+      "id": "Field_0gt3vig",
+      "key": "hora_atencion",
+      "validate": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 5
+      }
+    },
+    {
+      "label": "Hora Administración Antibióticos",
+      "type": "textfield",
+      "id": "Field_1b53h3v",
+      "key": "hora_antibioticos",
+      "validate": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 5
+      }
+    },
+    {
+      "label": "Hora Administración Suero",
+      "type": "textfield",
+      "id": "Field_1teumjn",
+      "key": "hora_suero",
+      "validate": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 5
+      }
+    },
+    {
+      "label": "Hora Alta Urgencias",
+      "type": "textfield",
+      "id": "Field_1ihbb5y",
+      "key": "hora_alta",
+      "validate": {
+        "required": true,
+        "minLength": 1,
+        "maxLength": 5
+      }
+    },
+    {
+      "label": "Antibióticos suministrados",
+      "type": "textfield",
+      "id": "Field_15f1x65",
+      "key": "antibioticos",
+      "validate": {
+        "required": true,
+        "minLength": 1
+      }
+    },
+    {
+      "label": "Observaciones",
+      "type": "textfield",
+      "id": "Field_1leehe9",
+      "key": "observaciones",
+      "description": "(opcional)"
+    },
+    {
+      "label": "Apto para alta",
+      "type": "checkbox",
+      "id": "Field_0wfah9n",
+      "key": "apto_alta"
+    },
+    {
+      "text": "-- Aprobado por el personal abajo firmante",
+      "type": "text",
+      "id": "Field_0plpl8g"
+    },
+    {
+      "type": "textfield",
+      "id": "Field_1jhm3w7",
+      "key": "firma",
+      "validate": {
+        "required": true,
+        "minLength": 1
+      }
+    }
+  ],
+  "type": "default",
+  "id": "form_boxes"
+}
