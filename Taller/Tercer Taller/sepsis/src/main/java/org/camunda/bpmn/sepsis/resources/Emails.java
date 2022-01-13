@@ -26,7 +26,7 @@ public class Emails {
 	 */
 	private static final String HOST = "smtp.gmail.com";
 	private static final String USER = "gsigrupo12021@gmail.com";
-	private static final String PWD = "gdvtkdqseigahads";
+	private static final String PWD = "bedajubvphjoqbpd";
 	private static final int PORT = 465;
 
 	/*
