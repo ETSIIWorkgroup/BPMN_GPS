@@ -3,7 +3,7 @@
 
 -> https://uses0-my.sharepoint.com/:u:/g/personal/alefertri1_alum_us_es/EWwEdDJs-RZJmhe4lDEJm24BKCReouNO_qfBWc0IqgyJlw?e=IcQOw3
 
-(es necesario iniciar sesión un usuario de la Universidad de Sevilla)
+(es necesario iniciar sesión con un usuario de la Universidad de Sevilla)
 
 * El proyecto Java Maven se adjunta en formato .zip en la misma entrega; para importar:
 
